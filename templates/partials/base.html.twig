@@ -17,25 +17,28 @@
 
     <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
 
-    {% block stylesheets %}
+<!--
+    __    __             _
+   / /_  / /_  _____    (_)___ ___  ___________
+  / __ \/ / / / / _ \  / / __ `/ / / / ___/ __ \
+ / /_/ / / /_/ /  __/ / / /_/ / /_/ / /__/ /_/ /
+/_.___/_/\__,_/\___/_/ /\__,_/\__, /\___/\____/
+                  /___/      /____/  thebluejay.co -->
 
+    {% block stylesheets %}
         {# <= IE8 styles #}
     	{% if browser.getBrowser == 'msie' and browser.getVersion <= 8 %}
     	{% endif %}
         {# > IE8 styles #}
     	{% if browser.getBrowser == 'msie' and browser.getVersion > 8 %}
     	{% endif %}
-
         {# fontawesome #}
         {% do assets.add('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 100) %}
-
     	{# custom styles for this theme #}
         {% do assets.add('theme://css/slippry.css', 10) %}
     	{% do assets.add('theme://css-compiled/styles.css', 10) %}
-
     	{{ assets.css() }}
     {% endblock %}
-
 {% endblock head %}
 </head>
 <body>
