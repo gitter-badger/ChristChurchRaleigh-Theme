@@ -1,0 +1,46 @@
+title: Items
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+                
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/items
+                      @data-options: '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/items
+                  @data-options: '\Grav\Common\Page\Pages::modularTypes'
+
+        values:
+          type: tab
+          title: Items
+          fields:
+            header.items:
+              name: items
+              type: list
+              label: Items
+
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  default: heart
+                .content:
+                  type: textarea
+                  label: Content
+                  size: large
+
+        assets:
+          type: ignore

@@ -1,0 +1,48 @@
+title: Highlights
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+                
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/highlights
+                      @data-options: '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/highlights
+                  @data-options: '\Grav\Common\Page\Pages::modularTypes'
+
+        highlights:
+          type: tab
+          title: Highlights
+          fields:
+            header.highlights:
+              name: highlights
+              type: list
+              label: Highlights
+
+              fields:
+                .icon:
+                  type: text
+                  label: Font Awesome Icon
+                  default: fa-heart
+                .title:
+                  type: text
+                  label: Title
+                .content:
+                  type: textarea
+                  label: Content
+
+        assets:
+          type: ignore

@@ -1,0 +1,72 @@
+title: Contact
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+             
+        options:
+          fields:
+            section:
+              type: spacer
+              title: Advanced
+            header.inpage_menu:
+              label: Show in Menu
+              type: toggle
+              highlight: 1
+              default: 1
+              options: 
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+            header.callout_position:
+              label: Callout Position
+              type: text
+              default: left
+
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/contact
+                      @data-options: '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/contact
+                  @data-options: '\Grav\Common\Page\Pages::modularTypes'
+
+        contact:
+          type: tab
+          title: Contact
+          fields:
+            header.contact.phones:
+              type: array
+              label: Phones
+              placeholder_key: Phone Type
+              placeholder_value: (123) 456-7890
+            header.contact.emails:
+              type: array
+              label: Emails
+              placeholder_key: Email Type
+              placeholder_value: email@example.com
+            header.contact.address:
+              type: textarea
+              label: address
+              validate:
+                type: textarea
+            header.contact.social:
+              type: array
+              label: Social Media
+              placeholder_key: facebook
+              placeholder_value: http://facebook.com
+
+        assets:
+          type: ignore

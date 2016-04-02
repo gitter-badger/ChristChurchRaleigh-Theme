@@ -1,0 +1,10 @@
+<footer id="copyright" role="contentinfo">
+	<div class="row">
+		<div class="col-1">
+			<p>&copy; {{ "now"|date("Y") }} {{ site.title }}.
+			Crafted by <a href="http://brandr.co" target="_blank">Brandr.</a></p>
+
+			{% include 'partials/social_media.html.twig' with { 'icon_size': 'fa-2x' } %}
+		</div>
+	</div>		
+</footer><!--/copyright-->

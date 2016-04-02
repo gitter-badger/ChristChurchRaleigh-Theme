@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set collection = page.collection() %}
+
+{% block content %}
+
+	{# main page content #}
+	<h1>{{ page.title }}</h1>
+	{{ page.content }}
+
+	{# include blog items #}
+	{% for child in collection %}
+		{% include 'partials/blog_item.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
+	{% endfor %}
+
+	{# include pagination if enabled #}
+	{% if config.plugins.pagination.enabled and collection.params.pagination %}
+        {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+    {% endif %}
+
+	{# include sidebar #}
+	{% include 'partials/sidebar.html.twig' with {'blog':page} %}
+
+{% endblock %}

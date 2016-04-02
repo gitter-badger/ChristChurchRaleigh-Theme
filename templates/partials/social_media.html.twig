@@ -1,0 +1,9 @@
+{# icons provided by fontawesome #}
+{# use include 'partials/social-media.html.twig' with { 'icon_size': 'fa-2x' } syntax #}
+<ul class="social-media">
+	{% for network in config.theme.social|keys %}
+		<li class="{{ network }}">
+			<a href="{{ config.theme.social[network] }} "><i class="fa fa-{{ network }} {{ icon_size }}"></i></a>
+		</li>
+	{% endfor %}
+</ul>

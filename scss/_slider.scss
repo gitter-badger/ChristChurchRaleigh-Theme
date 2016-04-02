@@ -1,0 +1,13 @@
+$slider-height: 380px;
+$slider-width: 960px;
+
+.slider {
+	width: $slider-width;
+	height: $slider-height;
+	overflow: hidden;
+
+	img {
+		width: $slider-width;
+		height: $slider-height;
+	}
+}

@@ -1,0 +1,29 @@
+title: Callout
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+
+        options:
+          fields:
+            section:
+              type: spacer
+              title: Advanced
+            header.inpage_menu:
+              label: Show in Menu
+              type: toggle
+              highlight: 1
+              default: 1
+              options: 
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+            header.callout_position:
+              label: Callout Position
+              type: text
+              default: left

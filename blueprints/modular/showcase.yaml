@@ -1,0 +1,64 @@
+title: Showcase
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        
+        content:
+          fields:
+            content:
+              type: ignore
+        
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/slides
+                      @data-options: '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/slides
+                  @data-options: '\Grav\Common\Page\Pages::modularTypes'
+
+        slides:
+          type: tab
+          title: Slides
+          fields:
+            header.slides:
+              name: slides
+              type: list
+              label: Slides
+
+              fields:
+                .image:
+                  type: pagemediaselect
+                  label: Image
+                  help: Upload your images in the Content tab and hit save, then they will show up here.
+                .video:
+                  type: text
+                  label: Video (Vimeo URL, etc.)
+                .title:
+                  type: text
+                  label: Title
+                .content:
+                  type: text
+                  label: Content
+                .button_text:
+                  type: text
+                  label: Button Text
+                  default: More Info
+                .button_link:
+                  type: text
+                  label: Button Link
+                  default: '#'
+
+        assets:
+          type: ignore

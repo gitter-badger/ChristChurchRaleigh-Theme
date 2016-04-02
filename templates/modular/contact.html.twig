@@ -1,0 +1,56 @@
+{# I prefer adding some sort of section title in the editor for a callout #}
+{# <h3>{{ page.title }}</h3> #}
+<section class="contact row">
+
+	{%  if header.callout_position == 'right' %}
+		{% set title_class = 'col-1-3 push-2-3 right' %}
+		{% set content_class = 'col-2-3 pull-1-3' %}
+	{% else %}
+		{% set title_class = 'col-1-3' %}
+		{% set content_class = 'col-2-3' %}
+	{% endif %}
+
+	<div class="{{ title_class }}">
+		<a href="#" class="fa-circle-bg"><i class="fa fa-location-arrow fa-2x"></i></a>
+		<div class="arrow_box content">
+			<h2><span>{{ page.title }}</span></h2>
+			{{ page.content }}
+			{{ header.contact.address|markdown }}
+		</div>
+	</div>
+
+	<div class="{{ content_class }}">
+		<ul class="contact-methods row">
+			
+			<li class="phone col-1-2 push-1-2">	
+				{# phones #}
+				<div class="contact-phones">
+
+					<a href="#" class="fa-circle-bg"><i class="fa fa-phone fa-2x"></i></a>
+					<ul class="arrow_box">
+					{% for key,value in header.contact.phones %}
+						<li><strong>{{ key }} Contact</strong><br />{{ value }}</li>
+					{% endfor %}
+					</ul>
+
+					<ul class="plain_box">
+					{% for key,value in header.contact.emails %}
+						<li><strong>{{ key }} Email</strong><br />{{ value|safe_email }}</li>
+					{% endfor %}
+					</ul>
+				</div>
+			</li>
+
+			{# emails #}
+			<li class="email col-1-2 pull-1-2">
+				<a href="#" class="fa-circle-bg"><i class="fa fa-comments fa-2x"></i></a>
+				<div class="arrow_box form">
+					<h3>Send us a message</h3>
+					{% include "forms/form.html.twig" %}
+				</div>
+			</li>
+
+		</ul>
+	</div>
+	
+</section>

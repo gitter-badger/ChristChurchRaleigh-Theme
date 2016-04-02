@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if header.description %}
+    <meta name="description" content="{{ header.description }}">
+    {% else %}
+    <meta name="description" content="{{ site.description }}">
+    {% endif %}
+    {% if header.robots %}
+    <meta name="robots" content="{{ header.robots }}">
+    {% endif %}
+    <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png">
+
+    <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+
+    {% block stylesheets %}
+
+        {# <= IE8 styles #}
+    	{% if browser.getBrowser == 'msie' and browser.getVersion <= 8 %}
+    	{% endif %}
+        {# > IE8 styles #}
+    	{% if browser.getBrowser == 'msie' and browser.getVersion > 8 %}
+    	{% endif %}
+
+        {# fontawesome #}
+        {% do assets.add('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 100) %}
+
+    	{# custom styles for this theme #}
+    	{% do assets.add('theme://css-compiled/styles.css', 10) %}
+
+    	{{ assets.css() }}
+    {% endblock %}
+
+{% endblock head %}
+</head>
+<body>
+
+<!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<a id="top"></a>
+
+{# Main Website #}
+<div class="wrapper">
+
+    <input data-function="swipe" id="swipe" type="checkbox">
+    <label data-function="swipe" for="swipe">&#9776;</label>
+
+    <div class="content">
+
+    	{# include the header + navigation #}
+        {% include 'partials/header.html.twig' %}
+
+        {# main page content #}
+        <main id="content" role="main">
+        	{% block content %}{% endblock %}
+        </main><!--/main-->
+
+        {# include the colophon #}
+        {% include 'partials/colophon.html.twig' %}
+
+    	{# include the footer #}
+        {% include 'partials/footer.html.twig' %}
+
+        {# javascripts #}
+        {% block javascripts %}
+            {% do assets.add('theme://js/scripts.js', 15) %}
+            {% do assets.add('theme://js/ui.js', 15) %}
+
+            {{ assets.js() }}
+        {% endblock %}
+
+    </div><!--.content-->
+
+    {# include off canvas content #}
+    {% include 'partials/off-canvas.html.twig' %}
+
+
+</div><!--.wrapper-->
+</body>
+</html>

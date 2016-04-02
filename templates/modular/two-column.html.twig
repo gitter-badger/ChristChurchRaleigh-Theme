@@ -1,0 +1,17 @@
+{% set class_title_col = page.header.class.title_col %}
+{% set class_content_col = page.header.class.content_col %}
+<section class="callout row">
+
+	<div class="{{ class_title_col }}">
+		<h2 class="big-title"><span>{{ page.title }}</span></h2>
+		<div class="extra-content">
+			{{ header.extra_content|markdown }}
+		</div>
+	</div>
+
+	<div class="{{ class_content_col }}">
+		<div class="content">{{ page.content }}</div>
+	</div>
+
+	
+</section>
