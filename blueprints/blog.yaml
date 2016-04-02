@@ -18,7 +18,7 @@ form:
               type: toggle
               highlight: 1
               default: 1
-              options: 
+              options:
                 1: Enabled
                 0: Disabled
               validate:
@@ -34,4 +34,4 @@ form:
             header.content.items:
               label: Children
               type: text
-              default: '@self.children'            
+              default: '@self.children'

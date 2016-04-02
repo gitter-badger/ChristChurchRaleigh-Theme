@@ -2,8 +2,14 @@
 
 {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
 
+{% block stylesheets %}
+	{{ parent() }}
+
+{% endblock %}
+
 {% block javascripts %}
     {{ parent() }}
+
 {% endblock %}
 
 {% block bottom %}

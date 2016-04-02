@@ -4,7 +4,6 @@
 
 (function ($) {
 
-
 	var isMobile = {
 	    Android: function() {
 	        return navigator.userAgent.match(/Android/i);

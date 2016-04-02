@@ -30,6 +30,7 @@
         {% do assets.add('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 100) %}
 
     	{# custom styles for this theme #}
+        {% do assets.add('theme://css/slippry.css', 10) %}
     	{% do assets.add('theme://css-compiled/styles.css', 10) %}
 
     	{{ assets.css() }}
@@ -66,19 +67,21 @@
     	{# include the footer #}
         {% include 'partials/footer.html.twig' %}
 
-        {# javascripts #}
-        {% block javascripts %}
-            {% do assets.add('theme://js/scripts.js', 15) %}
-            {% do assets.add('theme://js/ui.js', 15) %}
-
-            {{ assets.js() }}
-        {% endblock %}
-
     </div><!--.content-->
 
     {# include off canvas content #}
     {% include 'partials/off-canvas.html.twig' %}
 
+    {# javascripts #}
+    {% block javascripts %}
+        {% do assets.add('theme://js/slippry.min.js', 15) %}
+        {% do assets.add('theme://js/scripts.js', 15) %}
+        {% do assets.add('theme://js/ui.js', 15) %}
+
+        {{ assets.js() }}
+    {% endblock %}
+
+    {% block bottom %}{% endblock %}
 
 </div><!--.wrapper-->
 </body>

@@ -706,6 +706,226 @@ html {
   .pull-4-5 {
     position: relative;
     right: 80%; } }
+.col-1-6 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-1-6 {
+    float: left;
+    width: 16.66667%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-1-6 {
+    position: relative;
+    left: 16.66667%; }
+
+  .pull-1-6 {
+    position: relative;
+    right: 16.66667%; } }
+.col-2-6 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-2-6 {
+    float: left;
+    width: 33.33333%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-2-6 {
+    position: relative;
+    left: 33.33333%; }
+
+  .pull-2-6 {
+    position: relative;
+    right: 33.33333%; } }
+.col-3-6 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-3-6 {
+    float: left;
+    width: 50%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-3-6 {
+    position: relative;
+    left: 50%; }
+
+  .pull-3-6 {
+    position: relative;
+    right: 50%; } }
+.col-4-6 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-4-6 {
+    float: left;
+    width: 66.66667%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-4-6 {
+    position: relative;
+    left: 66.66667%; }
+
+  .pull-4-6 {
+    position: relative;
+    right: 66.66667%; } }
+.col-5-6 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-5-6 {
+    float: left;
+    width: 83.33333%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-5-6 {
+    position: relative;
+    left: 83.33333%; }
+
+  .pull-5-6 {
+    position: relative;
+    right: 83.33333%; } }
+.col-1-7 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-1-7 {
+    float: left;
+    width: 14.28571%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-1-7 {
+    position: relative;
+    left: 14.28571%; }
+
+  .pull-1-7 {
+    position: relative;
+    right: 14.28571%; } }
+.col-2-7 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-2-7 {
+    float: left;
+    width: 28.57143%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-2-7 {
+    position: relative;
+    left: 28.57143%; }
+
+  .pull-2-7 {
+    position: relative;
+    right: 28.57143%; } }
+.col-3-7 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-3-7 {
+    float: left;
+    width: 42.85714%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-3-7 {
+    position: relative;
+    left: 42.85714%; }
+
+  .pull-3-7 {
+    position: relative;
+    right: 42.85714%; } }
+.col-4-7 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-4-7 {
+    float: left;
+    width: 57.14286%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-4-7 {
+    position: relative;
+    left: 57.14286%; }
+
+  .pull-4-7 {
+    position: relative;
+    right: 57.14286%; } }
+.col-5-7 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-5-7 {
+    float: left;
+    width: 71.42857%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-5-7 {
+    position: relative;
+    left: 71.42857%; }
+
+  .pull-5-7 {
+    position: relative;
+    right: 71.42857%; } }
+.col-6-7 {
+  float: left;
+  width: 100%;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+@media only screen and (min-width: 48rem) {
+  .col-6-7 {
+    float: left;
+    width: 85.71429%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
+
+  .push-6-7 {
+    position: relative;
+    left: 85.71429%; }
+
+  .pull-6-7 {
+    position: relative;
+    right: 85.71429%; } }
 /**
  * Form Styles
  */
@@ -956,6 +1176,9 @@ ul.nav-menu {
 
 /* Page Header
  */
+nav.row {
+  padding-bottom: 1em; }
+
 ul.nav-menu li a {
   line-height: 80px; }
 
@@ -1011,6 +1234,54 @@ footer#copyright .social {
     color: #777; }
     #brandr a:hover {
       color: #999; }
+
+/* Home page
+ */
+/* Showcase */
+.showcase-slider {
+  /* Style the actual content */ }
+  .showcase-slider .text-content {
+    position: absolute;
+    bottom: 3em;
+    width: 100%; }
+    .showcase-slider .text-content .slide-pull {
+      width: 100%;
+      clear: both; }
+    .showcase-slider .text-content h3 {
+      color: #fff;
+      font-size: 3.6em;
+      font-weight: bold;
+      letter-spacing: -1px;
+      background: rgba(255, 255, 255, 0.1);
+      float: left;
+      padding: 0.25em 0.75em;
+      margin-left: -4.25em;
+      padding-left: 4.25em;
+      margin-bottom: 0; }
+    .showcase-slider .text-content div.content {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      float: left;
+      padding: 1em 1.5em;
+      margin-left: -9.75em;
+      padding-left: 9.75em;
+      font-size: 1.6em;
+      margin-bottom: 2em;
+      line-height: 1.5em; }
+    .showcase-slider .text-content a.button {
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px;
+      border: 0;
+      background: #3498db;
+      color: #fff;
+      padding: 0.5rem 1rem; }
+      .showcase-slider .text-content a.button:hover {
+        background: #57aae1;
+        transition: all 0.15s ease; }
+      .showcase-slider .text-content a.button:active {
+        background: #68b2e4; }
 
 /* Media Queries
 */
