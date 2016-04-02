@@ -1,0 +1,37 @@
+title: Blog
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+
+        options:
+          fields:
+            section:
+              type: spacer
+              title: Advanced
+            header.content.pagination:
+              label: Pagination
+              type: toggle
+              highlight: 1
+              default: 1
+              options: 
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+            header.content.limit:
+              label: Limit
+              type: text
+              default: 10
+              size: small
+              validate:
+                type: number
+                min: 1
+            header.content.items:
+              label: Children
+              type: text
+              default: '@self.children'            

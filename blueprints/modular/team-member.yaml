@@ -1,0 +1,18 @@
+title: Team
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+
+        content:
+          fields:
+            header.team.position:
+              label: Position
+              type: text
+            header.team.organization:
+              label: Organization
+              type: text

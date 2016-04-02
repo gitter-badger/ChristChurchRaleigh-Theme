@@ -1,0 +1,103 @@
+title: Items
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+
+        options:
+          fields:
+
+            layout:
+              type: section
+              title: Content
+              underline: true
+              fields:
+                header.inpage_menu:
+                  label: Show in Menu
+                  type: toggle
+                  highlight: 1
+                  default: 1
+                  options: 
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+
+            items:
+              type: section
+              title: Items
+              underline: true
+              fields:
+                header.content.pagination:
+                  label: Pagination
+                  type: toggle
+                  highlight: 1
+                  default: 1
+                  options: 
+                    1: Enabled
+                    0: Disabled
+                  validate:
+                    type: bool
+                header.content.limit:
+                  label: Limit
+                  type: text
+                  default: 10
+                  size: small
+                  validate:
+                    type: number
+                    min: 1
+                header.content.items:
+                  label: Children
+                  type: text
+                  default: '@self.modular'
+                
+            styles:
+              type: section
+              title: Styles
+              underline: true
+              fields:
+                header.class.title_col:
+                  label: Title Column Class
+                  type: text
+                  default: col-1-3
+                header.class.content_col:
+                  label: Content Column Class
+                  type: text
+                  default: col-2-3
+                header.class.items_row:
+                  label: Items Row Class
+                  type: text
+                  default: row
+                header.class.items_col:
+                  label: Items Column Class
+                  type: text
+                  default: col-1-2
+                header.class.col_count:
+                  label: Column Count
+                  type: text
+                  size: small
+                  default: 2
+                  validate:
+                    type: int
+                
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/items
+                      @data-options: '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/items
+                  @data-options: '\Grav\Common\Page\Pages::modularTypes'
+
+        assets:
+          type: ignore

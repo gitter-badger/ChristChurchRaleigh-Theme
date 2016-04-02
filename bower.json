@@ -1,0 +1,20 @@
+{
+  "name": "ns",
+  "homepage": "https://github.com/kalebheitzman/grav-theme-component",
+  "authors": [
+    "Kaleb Heitzman <kalebheitzman@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

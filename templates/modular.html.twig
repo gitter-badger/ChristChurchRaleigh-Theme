@@ -1,0 +1,20 @@
+{% extends 'partials/base.html.twig' %}
+
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+{% block bottom %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+	{{ page.content }}
+	{% for module in page.collection() %}
+		<section id="{{ _self.pageLinkName(module.menu) }}">
+		    {{ module.content }}
+		</section>
+    {% endfor %}
+{% endblock %}

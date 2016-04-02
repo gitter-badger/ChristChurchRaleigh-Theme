@@ -1,0 +1,6 @@
+{# I prefer adding some sort of section title in the editor for a callout #}
+{# <h3>{{ page.title }}</h3> #}
+{{ page.content }}
+
+{% set image = page.media.images|first %}
+{{ image.cropZoom(500,300).html('','','pure-img') }}

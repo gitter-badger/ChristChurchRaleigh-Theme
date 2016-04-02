@@ -1,0 +1,27 @@
+{% set count = page.header.items|count %}
+{% set class_title_col = page.header.class.title_col %}
+{% set class_content_col = page.header.class.content_col %}
+{% set class_items_row = page.header.class.items_row %}
+{% set class_items_col = page.header.class.items_col %}
+{% set collection = page.collection() %}
+{{ dump(collection) }}
+<section class="items row">
+
+	<div class="title {{ class_title_col }}">
+		<h2 class="big-title"><span>{{ page.title }}</span></h2>
+	</div>
+
+	<div class="content {{ class_content_col }}">
+		
+		<div class="{{ class_items_row }}">
+		{% set i = 1 %}
+		{% for module in collection %}
+			<div class="item {{ class_items_col }}">
+				{{ module.content }}
+			</div>
+		{% endfor %}
+		</div>
+
+	</div>
+	
+</section>

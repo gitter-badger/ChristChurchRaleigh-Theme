@@ -1,0 +1,65 @@
+name: Christ Church Raleigh
+version: 1.0.0
+
+description: "A **Grav** Theme for Crist Church on Capitol Hill in Raliegh, North Carolina"
+
+icon: heart-o
+author:
+  name: Kaleb Heitzman
+  email: kalebheitzman@gmail.com
+  url: http://kheitzman.com
+
+homepage: https://github.com/kalebheitzman/grav-theme-pure
+demo: https://github.com/kalebheitzman/grav-theme-pure
+keywords: pure, theme, core, modern, fast, responsive, html5
+bugs: https://github.com/kalebheitzman/grav-theme-pure/issues
+
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    options:
+      type: spacer
+      title: Theme Options
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in navbar
+        highlight: 1
+        default: 1
+        options:
+          1: Enabled
+          0: Disabled
+        validate:
+          type: bool
+    social.media:
+      type: spacer
+      title: Social Media
+    social.facebook:
+      type: text
+      size: large
+      label: Facebook URL
+    social.twitter:
+      type: text
+      size: large
+      label: Twitter URL
+    social.instagram:
+      type: text
+      size: large
+      label: Instagram URL
+    social.linkedin:
+      type: text
+      size: large
+      label: LinkedIn URL
+    social.spotify:
+      type: text
+      size: large
+      label: Spotify URL
+    social.soundcloud:
+      type: text
+      size: large
+      label: Soundcloud URL
+    social.pinterest:
+      type: text
+      size: large
+      label: Pinterest URL

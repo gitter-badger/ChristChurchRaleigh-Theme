@@ -1,0 +1,25 @@
+title: Quote
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+
+        options:
+          fields:
+            section:
+              type: spacer
+              title: Advanced
+            header.inpage_menu:
+              label: Show in Menu
+              type: toggle
+              highlight: 1
+              default: 0
+              options: 
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool

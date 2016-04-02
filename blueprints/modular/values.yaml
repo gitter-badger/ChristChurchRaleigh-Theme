@@ -1,0 +1,45 @@
+title: Values
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+                
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/values
+                      @data-options: '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/values
+                  @data-options: '\Grav\Common\Page\Pages::modularTypes'
+
+        values:
+          type: tab
+          title: Values
+          fields:
+            header.values:
+              name: values
+              type: list
+              label: Values
+
+              fields:
+                .icon:
+                  type: text
+                  label: Font Awesome Icon
+                  default: heart
+                .content:
+                  type: textarea
+                  label: Content
+
+        assets:
+          type: ignore

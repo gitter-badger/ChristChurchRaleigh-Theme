@@ -1,0 +1,20 @@
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+<ul class="slider">
+	{% for slide in page.header.slides %}
+		{{ dump(slide) }}
+		<li id="{{ _self.pageLinkName(slide.title) }}-slide">
+			<h3>{{ slide.title }}</h3>
+			<div>{{ slide.content }}</div>
+			{# anchor with button class #}
+			<a href="{{ slide.button_link }}" class="button">{{ slide.button_text }}</a>
+			{{ page.media[slide.image].cropZoom(960,380).html('Image') }}
+		</li>
+	{% endfor %}
+</ul>
+
+<ul class="slider-navigation">
+	{% for slide in page.header.slides %}
+		<li><a href="#{{ _self.pageLinkName(slide.title) }}-slide">{{ slide.title }}</a></li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,77 @@
+{% macro loop(page) %}
+    {% for p in page.children.visible %}
+        {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
+
+        <li class="{{ current_page }}">
+            <a href="{{ p.url }}">
+                {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
+                {{ p.menu }}
+            </a>
+            {% if p.children.visible.count > 0 %}
+                <ul>
+            		{% set has_children = (p.children.visible.count != 0) ? 'has-children' : '' %}
+                    <li class="{{ current_page }} {{ has_children }}">
+                        <a href="{{ p.url }}">{{ p.menu }}</a>
+                        {% if p.children.visible.count > 0 %}
+                            <ul class="vertical menu submenu">
+                                {{ _self.loop(p) }}
+                            </ul>
+                        {% endif %}
+                    </li>
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{% set page_count = pages.children.visible|length %}
+{% set break_count = page_count/2 %}
+{% set i = 0 %}
+
+<nav class="row">
+    <div class="col-1-5 push-2-5">
+        <a href="{{ base_url_absolute }}"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt={{ site.title }}&w=350&h=150&bg=0065ff&txtcolor=fff" class="logo" /></a>
+    </div>
+    <div class="col-2-5 pull-1-5">
+        <ul class="nav-menu">
+            {% if theme_config.dropdown.enabled %}
+                {{ _self.loop(pages) }}
+            {% else %}
+                {% for page in pages.children.visible|slice(0, break_count) %}
+                    {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                    <li class="{{ current_page }}">
+                        <a href="{{ page.url }}">
+                            {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
+                            {{ page.menu }}
+                        </a>
+                    </li>
+                    {% set i = i+1 %}
+                {% endfor %}
+            {% endif %}
+            {% if config.plugins.login.enabled and grav.user.username %}
+                <li><i class="fa fa-lock"></i> {% include 'partials/login-status.html.twig' %}</li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="col-2-5">
+        <ul class="nav-menu">
+            {% if theme_config.dropdown.enabled %}
+                {{ _self.loop(pages) }}
+            {% else %}
+                {% for page in pages.children.visible|slice(break_count, page_count) %}
+                    {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                    <li class="{{ current_page }}">
+                        <a href="{{ page.url }}">
+                            {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
+                            {{ page.menu }}
+                        </a>
+                    </li>
+                    {% set i = i+1 %}
+                {% endfor %}
+            {% endif %}
+            {% if config.plugins.login.enabled and grav.user.username %}
+                <li><i class="fa fa-lock"></i> {% include 'partials/login-status.html.twig' %}</li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
