@@ -1,10 +1,10 @@
 {
-  "name": "ns",
-  "homepage": "https://github.com/kalebheitzman/grav-theme-component",
+  "name": "ccr",
+  "homepage": "http://github.com/bluejayco/ccr-theme",
   "authors": [
     "Kaleb Heitzman <kalebheitzman@gmail.com>"
   ],
-  "description": "",
+  "description": "Christ Church Raleigh",
   "main": "",
   "moduleType": [],
   "license": "MIT",
@@ -15,6 +15,13 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-  }
+  "dependencies": {},
+  "keywords": [
+    "html5",
+    "css3",
+    "js",
+    "theme",
+    "grav"
+  ],
+  "private": true
 }

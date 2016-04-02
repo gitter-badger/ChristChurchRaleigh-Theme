@@ -1,10 +1,17 @@
 <?php
+/*
+    __    __             _
+   / /_  / /_  _____    (_)___ ___  ___________
+  / __ \/ / / / / _ \  / / __ `/ / / / ___/ __ \
+ / /_/ / / /_/ /  __/ / / /_/ / /_/ / /__/ /_/ /
+/_.___/_/\__,_/\___/_/ /\__,_/\__, /\___/\____/
+                  /___/      /____/  thebluejay.co */
 
 namespace Grav\Theme;
 
 use Grav\Common\Theme;
 
-class Pure extends Theme
+class Ccr extends Theme
 {
 	public static function getSubscribedEvents()
 	{
@@ -26,13 +33,15 @@ class Pure extends Theme
 	}
 
 	public function onTwigSiteVariables()
-	{		
+	{
 		$this->grav['assets']
+			->addCSS('theme://css/slippry.css,', 15)
 			->addCss('theme://css-compiled/styles.css', 15);
 
 		$this->grav['assets']
-			->add('jquery', 101)
-			->addJs('theme://js/script.js')	
-			->addJs('theme://js/ui.js');		
+			->addJs('jquery', 101)
+			->addJs('theme://js/slippry.min.js')
+			->addJs('theme://js/script.js')
+			->addJs('theme://js/ui.js');
 	}
 }

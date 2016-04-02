@@ -13,7 +13,7 @@
     {% if header.robots %}
     <meta name="robots" content="{{ header.robots }}">
     {% endif %}
-    <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png">
+    <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.ico">
 
     <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
 
@@ -32,11 +32,9 @@
         {# > IE8 styles #}
     	{% if browser.getBrowser == 'msie' and browser.getVersion > 8 %}
     	{% endif %}
-        {# fontawesome #}
-        {% do assets.add('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 100) %}
+
     	{# custom styles for this theme #}
         {% do assets.add('theme://css/slippry.css', 10) %}
-    	{% do assets.add('theme://css-compiled/styles.css', 10) %}
     	{{ assets.css() }}
     {% endblock %}
 {% endblock head %}
@@ -77,11 +75,6 @@
 
     {# javascripts #}
     {% block javascripts %}
-        {% do assets.add('jquery', 100) %}
-        {% do assets.add('theme://js/slippry.min.js', 15) %}
-        {% do assets.add('theme://js/scripts.js', 15) %}
-        {% do assets.add('theme://js/ui.js', 15) %}
-
         {{ assets.js() }}
     {% endblock %}
 
