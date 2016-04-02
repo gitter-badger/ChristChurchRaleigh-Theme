@@ -1,10 +1,17 @@
-<footer id="copyright" role="contentinfo">
-	<div class="row">
-		<div class="col-1">
-			<p>&copy; {{ "now"|date("Y") }} {{ site.title }}.
-			Crafted by <a href="http://brandr.co" target="_blank">Brandr.</a></p>
+<footer id="copyright" class="footer row" role="contentinfo">
 
-			{% include 'partials/social_media.html.twig' with { 'icon_size': 'fa-2x' } %}
-		</div>
-	</div>		
+	<div class="social col-1-2 push-1-2 right">
+		{% include 'partials/social_media.html.twig' with { 'icon_size': 'fa-2x' } %}
+	</div>
+
+	<div class="copyright col-1-2 pull-1-2">
+		<p>&copy; {{ "now"|date("Y") }} {{ site.title }}.
+	</div>
+
 </footer><!--/copyright-->
+
+<section id="brandr" role="">
+	<div class="row">
+		<p>Made with <a href="https://getgrav.org/" target="_blank">Grav.</a> Crafted by <a href="http://thebluejay.co" target="_blank">BluejayCo.</a></p>
+	</div>
+</section><!--/brander-->

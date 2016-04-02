@@ -1,8 +1,0 @@
-{# icons provided by fontawesome #}
-<ul class="social-media">
-	{% for network in config.theme.social|keys %}
-		<li class="{{ network }}">
-			<a href="{{ config.theme.social[network] }} "><i class="fa fa-{{ network }} fa-2x"></i></a>
-		</li>
-	{% endfor %}
-</ul>

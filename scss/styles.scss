@@ -123,12 +123,65 @@ main#content {
  */
 section#colophon {
 
+	.menu a {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 }
 
 /* Page Footer
  */
 footer#copyright {
 
+	.copyright {
+		@include col;
+		@include mq($mq-md) {
+				@include col(1/2);
+		}
+
+	}
+	.social {
+		@include col;
+		@include mq($mq-md) {
+			@include col(1/2);
+		}
+
+		ul {
+			list-style: none;
+
+
+			li {
+				display: inline-block;
+				margin-left: 0.75em;
+
+				a {
+					color: #777;
+
+					&:hover {
+						color: #999;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+#brandr {
+	padding-top: 0;
+	padding-bottom: 0;
+	text-align: right;
+	background: #222;
+	color: #555;
+
+	a {
+		color: #777;
+
+		&:hover {
+			color: #999;
+		}
+	}
 }
 
 /* Media Queries
