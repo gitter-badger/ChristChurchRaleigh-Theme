@@ -12,7 +12,7 @@
 @import 'bluejay/src/bluejay';
 
 // variables
-$wrapper: 95rem;
+$wrapper: 70rem;
 $gutter: 0.5rem;
 
 // fonts
@@ -94,7 +94,6 @@ ul.nav-menu {
 .row {
 	margin: 0 auto;
 	@include mq($mq-md) {
-		width: 1120px;
 		padding: 2em 0;
 	}
 

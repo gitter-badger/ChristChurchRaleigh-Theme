@@ -1,0 +1,18 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+	<div class="row">
+
+		<div class="col-3-4">
+			<h1>{{ page.title }}</h1>
+			{{ page.content }}
+		</div>
+
+		<div class="col-1-4">
+			<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=sidebar&w=350&h=150&bg=0065ff&txtcolor=fff" alt="sidebar" />
+		</div>
+
+	</div>
+
+{% endblock %}
