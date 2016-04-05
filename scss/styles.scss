@@ -26,10 +26,10 @@ html {
 }
 
 /**
- * Generate an automatic 5 column grid for prototyping that is mobile-first.
+ * Generate an automatic 12 column grid for prototyping that is mobile-first.
  * This includes all column, push, and pull classes.
  */
-@include grid(7);
+@include grid(12);
 
 /**
  * Form Styles
