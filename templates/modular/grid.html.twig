@@ -1,0 +1,21 @@
+<section class="grid">
+	
+	<div class="row">
+		{{ page.content }}
+	</div>
+
+	<div class="row">
+	{% for item in page.header.grid %}
+		<div class="col-1-3 item">
+			<div class="text-content">
+				<h3><a href="{{ item.link }}">{{ item.title }}</a></h3>
+				<div>{{ item.content }}</div>
+			</div>
+			<div class="image-content">
+				{{ page.media[item.image].cropZoom(600,380).html('Image') }}
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+
+</section>

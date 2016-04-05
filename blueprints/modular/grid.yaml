@@ -1,0 +1,52 @@
+title: Items
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+                
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/Grid
+                      @data-options: '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/Grid
+                  @data-options: '\Grav\Common\Page\Pages::modularTypes'
+
+        Grid:
+          type: tab
+          title: Items
+          fields:
+            header.grid:
+              name: Items
+              type: list
+              label: Items
+
+              fields:
+                .image:
+                  type: pagemediaselect
+                  label: Image
+                  help: Upload your images in the Content tab and hit save, then they will show up here.
+                .title:
+                  type: text
+                  label: Title
+                .content:
+                  type: text
+                  label: Content
+                .link:
+                  type: text
+                  label: Button Link
+                  default: '#'
+
+        assets:
+          type: ignore

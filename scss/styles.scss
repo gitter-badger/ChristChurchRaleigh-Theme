@@ -16,7 +16,7 @@
 
 // variables
 $wrapper: 70rem;
-$gutter: 0.5rem;
+$gutter: 2rem;
 
 // fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway);
@@ -190,6 +190,10 @@ footer#copyright {
 		}
 	}
 }
+
+/* Modular Styles
+ */
+@import 'modular-styles';
 
 /* Home page
  */
