@@ -398,7 +398,7 @@ a {
   .row:after {
     clear: both; }
 
-.row > div, .row nav, .row section, form div, form label, form input[type="text"],
+.row > div, .row nav, .row section, .row ul, .row ol, form div, form label, form input[type="text"],
 form input[type="email"],
 form input[type="password"],
 form textarea, form select {
@@ -489,6 +489,10 @@ html {
   max-width: 95rem;
   margin-left: auto;
   margin-right: auto; }
+  .row .row {
+    width: auto !important;
+    margin-left: -0.25rem;
+    margin-right: -0.25rem; }
 
 .col-1 {
   float: left;

@@ -23,10 +23,6 @@ form:
                 0: Disabled
               validate:
                 type: bool
-            header.callout_position:
-              label: Callout Position
-              type: text
-              default: left
 
         advanced:
           fields:

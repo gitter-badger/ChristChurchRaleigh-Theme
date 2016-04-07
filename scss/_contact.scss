@@ -1,0 +1,131 @@
+/* contact */
+section#contact {
+	background: #f4f4f4;
+
+	h2 {
+		margin-bottom: 0.5em;
+		font-size: 3em;
+		margin-top: 0em;
+	}
+	.content {
+		@extend %border-box;
+		background: rgba(255,255,255,1);
+		padding: 1em;
+		margin-top: 3em;
+		text-align: left;
+
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+
+	}
+
+	.alert {
+		background: rgb(149, 255, 162);
+		color: #333;
+		padding: 1em;
+		border-radius: 4px;
+	}
+
+	.form {
+		background: #fff;
+		margin-top: 3em;
+		padding: 0.15em 1em 1em;
+		border-radius: 3px;
+	}
+
+	form {
+		@include form;
+
+		.form-field {
+			margin: 1em 0;
+		}
+
+		label {
+			display: none;
+		}
+
+		input,
+		textarea {
+			color: #333;
+			background: #eee;
+			border: 1px solid #ddd;
+
+			&:focus {
+
+			}
+		}
+
+		textarea {
+			height: 100px;
+		}
+
+		button {
+			border: 0;
+			background: rgb(80, 162, 254);
+			color: rgb(255,255,255);
+
+			&:hover {
+				background: darken(rgb(80, 162, 254), 10%);
+			}
+		}
+
+		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		    color:    #333;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #333;
+		   opacity:  1;
+		}
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #333;
+		   opacity:  1;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    #333;
+		}
+		:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+		  color:    #333;
+		}
+	}
+
+	.contact-phones {
+		margin-top: 3em;
+
+		ul {
+			list-style: none;
+			padding: 0 1em;
+
+			li {
+				strong {
+
+				}
+			}
+		}
+	}
+
+	.contact-social-media {
+		margin-top: 2em;
+	}
+
+	$circle-size: 70px;
+	a.fa-circle-bg {
+		display: block;
+		height: $circle-size;
+		width: $circle-size;
+		background: rgba(255,255,255,0.9);
+		overflow: hidden;
+		border-radius: $circle-size;
+		color: #333;
+		text-align: center;
+		line-height: $circle-size;
+		margin: 0 auto;
+
+		i {
+			line-height: $circle-size;
+		}
+	}
+
+
+}

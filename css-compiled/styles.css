@@ -22,7 +22,7 @@
  * 2. Prevent iOS and IE text size adjust after device orientation change,
  *    without disabling user zoom.
  */
-@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -409,10 +409,13 @@ a {
   .row:after {
     clear: both; }
 
-.row > div, .row nav, .row section, form div, form label, form input[type="text"],
+.row > div, .row nav, .row section, .row ul, .row ol, form div, form label, form input[type="text"],
 form input[type="email"],
 form input[type="password"],
-form textarea, form select {
+form textarea, form select, section#contact .content, section#contact form div, section#contact form label, section#contact form input[type="text"],
+section#contact form input[type="email"],
+section#contact form input[type="password"],
+section#contact form textarea, section#contact form select {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
@@ -490,7 +493,7 @@ body {
     padding: 0.5em 1em; }
 
 html {
-  font-family: Raleway, sans-serif; }
+  font-family: Lato, sans-serif; }
 
 /**
  * Generate an automatic 12 column grid for prototyping that is mobile-first.
@@ -500,6 +503,10 @@ html {
   max-width: 70rem;
   margin-left: auto;
   margin-right: auto; }
+  .row .row {
+    width: auto !important;
+    margin-left: -1rem;
+    margin-right: -1rem; }
 
 .col-1 {
   float: left;
@@ -2085,6 +2092,53 @@ ul.nav-menu li a {
 
 /* Page Main Content
  */
+/* plain_box */
+.plain_box {
+  color: #333;
+  position: relative;
+  background: white;
+  border: 1px solid white;
+  margin-top: 1em !important; }
+
+/* arrow box */
+.arrow_box {
+  color: #333;
+  position: relative;
+  background: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  margin-bottom: 1.5em; }
+  @media only screen and (min-width: 48rem) {
+    .arrow_box {
+      margin-bottom: 0; } }
+
+.arrow_box:after, .arrow_box:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none; }
+
+.arrow_box:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: white;
+  border-width: 25px;
+  margin-left: -25px; }
+
+.arrow_box:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: white;
+  border-width: 26px;
+  margin-left: -26px; }
+
+/* Highlights */
+.highlights ul {
+  list-style: none;
+  padding: 0; }
+
 /* Page Colophon
  */
 section#colophon .menu a {
@@ -2155,6 +2209,161 @@ section.grid .item {
       padding: 1rem 2rem 1rem 1rem; }
       section.grid .item .text-content h3 a {
         color: #333; }
+
+/* contact */
+section#contact {
+  background: #f4f4f4; }
+  section#contact h2 {
+    margin-bottom: 0.5em;
+    font-size: 3em;
+    margin-top: 0em; }
+  section#contact .content {
+    background: white;
+    padding: 1em;
+    margin-top: 3em;
+    text-align: left; }
+    section#contact .content ul {
+      list-style: none;
+      padding: 0; }
+  section#contact .alert {
+    background: #95ffa2;
+    color: #333;
+    padding: 1em;
+    border-radius: 4px; }
+  section#contact .form {
+    background: #fff;
+    margin-top: 3em;
+    padding: 0.15em 1em 1em;
+    border-radius: 3px; }
+  section#contact form label {
+    display: inline-block;
+    padding: 1em 0; }
+  section#contact form input[type="text"],
+  section#contact form input[type="email"],
+  section#contact form input[type="password"],
+  section#contact form textarea {
+    width: 100%;
+    border: 1px solid #efefef;
+    background: #f7f7f7;
+    padding: 1em 0.75em; }
+  section#contact form input[type="text"]:focus, section#contact form input[type="text"]:hover,
+  section#contact form input[type="email"]:focus, section#contact form input[type="email"]:hover,
+  section#contact form input[type="password"]:focus, section#contact form input[type="password"]:hover,
+  section#contact form textarea:focus, section#contact form textarea:hover {
+    outline: 0;
+    background: #f2f2f2;
+    border: 1px solid #eaeaea;
+    transition: all 0.3s ease; }
+  section#contact form textarea {
+    height: 5em; }
+  section#contact form input[type="checkbox"],
+  section#contact form input[type="radio"] {
+    display: none; }
+  section#contact form input[type="checkbox"] + label,
+  section#contact form input[type="radio"] + label {
+    cursor: pointer;
+    padding: 0.7em 0;
+    margin-right: 1em; }
+  section#contact form input[type="checkbox"] + label:before,
+  section#contact form input[type="radio"] + label:before {
+    content: "\00a0";
+    border: 1px solid #efefef;
+    background: #f7f7f7;
+    display: inline-block;
+    width: 1.5em;
+    line-height: 1.5em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    padding: 0;
+    text-align: center; }
+  section#contact form input[type="checkbox"] + label:before {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; }
+  section#contact form input[type="radio"] + label:before {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%; }
+  section#contact form input[type="checkbox"]:checked + label:before {
+    content: "\2713"; }
+  section#contact form input[type="radio"]:checked + label:before {
+    content: "\25CF"; }
+  section#contact form input[type="radio"]:checked + label:before,
+  section#contact form input[type="radio"]:hover + label:before,
+  section#contact form input[type="checkbox"]:checked + label:before,
+  section#contact form input[type="checkbox"]:hover + label:before {
+    background: #f2f2f2;
+    border: 1px solid #eaeaea; }
+  section#contact form select {
+    height: 3em;
+    border: 1px solid #efefef;
+    background: #f7f7f7;
+    padding: 1em 0.75em;
+    text-indent: 0.5em;
+    cursor: pointer;
+    width: auto;
+    -webkit-appearance: menulist-button;
+    -moz-appearance: menulist-button;
+    appearance: menulist-button; }
+    section#contact form select:hover {
+      background: #f2f2f2;
+      border: 1px solid #eaeaea; }
+  section#contact form .form-field {
+    margin: 1em 0; }
+  section#contact form label {
+    display: none; }
+  section#contact form input,
+  section#contact form textarea {
+    color: #333;
+    background: #eee;
+    border: 1px solid #ddd; }
+  section#contact form textarea {
+    height: 100px; }
+  section#contact form button {
+    border: 0;
+    background: #50a2fe;
+    color: white; }
+    section#contact form button:hover {
+      background: #1d87fe; }
+  section#contact form ::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #333; }
+  section#contact form :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #333;
+    opacity: 1; }
+  section#contact form ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #333;
+    opacity: 1; }
+  section#contact form :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #333; }
+  section#contact form :placeholder-shown {
+    /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color: #333; }
+  section#contact .contact-phones {
+    margin-top: 3em; }
+    section#contact .contact-phones ul {
+      list-style: none;
+      padding: 0 1em; }
+  section#contact .contact-social-media {
+    margin-top: 2em; }
+  section#contact a.fa-circle-bg {
+    display: block;
+    height: 70px;
+    width: 70px;
+    background: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    border-radius: 70px;
+    color: #333;
+    text-align: center;
+    line-height: 70px;
+    margin: 0 auto; }
+    section#contact a.fa-circle-bg i {
+      line-height: 70px; }
 
 /* Home page
  */
