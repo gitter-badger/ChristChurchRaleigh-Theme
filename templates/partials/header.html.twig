@@ -1,3 +1,10 @@
-<header id="masthead" role="banner">
-	{% include 'partials/navigation.html.twig' %}
-</header><!--/masthead-->.
+<section class="navigation">
+    <div class="nav-container">
+        
+        <div class="brand">
+            <a href="{{ base_url_absolute }}">{{ site.title }}</a>
+        </div>
+
+	    {% include 'partials/navigation.html.twig' %}
+    </div><!--.nav-container-->
+</section><!--.navigation-->

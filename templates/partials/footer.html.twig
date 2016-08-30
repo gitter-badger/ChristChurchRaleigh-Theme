@@ -1,17 +1,17 @@
-<footer id="copyright" class="footer row" role="contentinfo">
+<footer id="copyright" class="copyright container" role="contentinfo">
 
-	<div class="social col-1-2 push-1-2 right">
-		{% include 'partials/social_media.html.twig' with { 'icon_size': 'fa-2x' } %}
+	<div class="copyright">
+		<p>&copy; {{ "now"|date("Y") }} {{ site.title }}.
 	</div>
 
-	<div class="copyright col-1-2 pull-1-2">
-		<p>&copy; {{ "now"|date("Y") }} {{ site.title }}.
+	<div class="social right">
+		{% include 'partials/social_media.html.twig' with { 'icon_size': 'fa-2x' } %}
 	</div>
 
 </footer><!--/copyright-->
 
-<section id="brandr" role="">
-	<div class="row">
-		<p>Made with <a href="https://getgrav.org/" target="_blank">Grav.</a> Crafted by <a href="http://thebluejay.co" target="_blank">BluejayCo.</a></p>
+<section class="crafted-by-ky" role="">
+	<div class="container">
+		<p>Made with <a href="https://getgrav.org" target="_blank">Grav</a> /  Crafted by <a href="http://heitzman.co" target="_blank" class="kh">KH</a></p>
 	</div>
-</section><!--/brander-->
+</section><!--/crafted-by-ky-->

@@ -8,7 +8,7 @@
                 {{ p.menu }}
             </a>
             {% if p.children.visible.count > 0 %}
-                <ul>
+                <ul class="nav-dropdown">
             		{% set has_children = (p.children.visible.count != 0) ? 'has-children' : '' %}
                     <li class="{{ current_page }} {{ has_children }}">
                         <a href="{{ p.url }}">{{ p.menu }}</a>
@@ -28,50 +28,27 @@
 {% set break_count = page_count/2 %}
 {% set i = 0 %}
 
-<nav class="row">
-    <div class="col-1-7 push-3-7">
-        <a href="{{ base_url_absolute }}"><img src="{{ url('theme://images/logo.jpg') }}" class="logo" /></a>
+<nav>
+    <div class="nav-mobile">
+        <a id="nav-toggle" href="#!"><span></span></a>
     </div>
-    <div class="col-3-7 pull-1-7">
-        <ul class="nav-menu">
-            {% if theme_config.dropdown.enabled %}
-                {{ _self.loop(pages) }}
-            {% else %}
-                {% for page in pages.children.visible|slice(0, break_count) %}
-                    {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
-                    <li class="{{ current_page }}">
-                        <a href="{{ page.url }}">
-                            {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
-                            {{ page.menu }}
-                        </a>
-                    </li>
-                    {% set i = i+1 %}
-                {% endfor %}
-            {% endif %}
-            {% if config.plugins.login.enabled and grav.user.username %}
-                <li><i class="fa fa-lock"></i> {% include 'partials/login-status.html.twig' %}</li>
-            {% endif %}
-        </ul>
-    </div>
-    <div class="col-3-7 ">
-        <ul class="nav-menu">
-            {% if theme_config.dropdown.enabled %}
-                {{ _self.loop(pages) }}
-            {% else %}
-                {% for page in pages.children.visible|slice(break_count, page_count) %}
-                    {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
-                    <li class="{{ current_page }}">
-                        <a href="{{ page.url }}">
-                            {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
-                            {{ page.menu }}
-                        </a>
-                    </li>
-                    {% set i = i+1 %}
-                {% endfor %}
-            {% endif %}
-            {% if config.plugins.login.enabled and grav.user.username %}
-                <li><i class="fa fa-lock"></i> {% include 'partials/login-status.html.twig' %}</li>
-            {% endif %}
-        </ul>
-    </div>
+    <ul class="nav-menu">
+        {% if grav.theme.config.dropdown.enabled %}
+            {{ _self.loop(pages) }}
+        {% else %}
+            {% for page in pages.children.visible %}
+                {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                <li class="{{ current_page }}">
+                    <a href="{{ page.url }}">
+                        {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
+                        {{ page.menu }}
+                    </a>
+                </li>
+                {% set i = i+1 %}
+            {% endfor %}
+        {% endif %}
+        {% if config.plugins.login.enabled and grav.user.username %}
+            <li><i class="fa fa-lock"></i> {% include 'partials/login-status.html.twig' %}</li>
+        {% endif %}
+    </ul>
 </nav>

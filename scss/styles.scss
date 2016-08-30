@@ -1,181 +1,150 @@
 /**
  * Christ Church Raleigh
- * Utilizes Bluejay by Kaleb Heitzman
+ * Utilizes Crafted by Kaleb Heitzman
  *
  * Theme by Kaleb Heitzman
  * Copyright 2016
  */
 
  // fontawesome
- @import '../bower_components/components-font-awesome/css/font-awesome.css';
-
-/**
- * Import Bluejay
- */
-@import 'bluejay/src/bluejay';
+ @import '../../bower_components/components-font-awesome/css/font-awesome.css';
+ @import 'fonts';
 
 // variables
-$wrapper: 70rem;
-$gutter: 2rem;
+$max-width: 70rem;
 
-// fonts
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+// brand colors
+$primary: #003D6B;
+$accent1: #607C8C;
+$accent2: #7A2638;
+$text: #000000;
 
+// default buttons
+$buttons: 	(default #cccccc),
+			(secondary #2ecc71),
+			(primary #3498db),
+			(danger #e74c3c);
+
+$btn-color: #fff;
+
+// import crafted by kh
+@import '../crafted/src/scss/crafted';
+
+/* typography setup */
 html {
 	font-family: Lato, sans-serif;
+	color: $text;
+}
+a {
+	color: $accent2;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Sabon-RomanSC, serif; 
+	font-weight: normal; 
+	font-style: normal;
 }
 
-/**
- * Generate an automatic 12 column grid for prototyping that is mobile-first.
- * This includes all column, push, and pull classes.
- */
-@include grid(12);
-
-/**
- * Form Styles
- */
-
-form {
-	@include form;
-
-	div.row {
-		margin-top: 0.75em;
-		margin-bottom: 0.75em;
-	}
+/* default classes */
+.container {
+	@include outer-container();
 }
-
-/**
- * Button Styles
- */
-
-@include buttons();
-
-.btn-green {
-	@include button($btn-green);
-}
-.btn-blue {
-	@include button($btn-blue);
-}
-.btn-yellow{
-	@include button($btn-yellow);
-}
-.btn-red {
-	@include button($btn-red);
-}
-.btn-default {
-	@include button($btn-default);
-}
-
-/**
- * Table Styles
- */
-
-table {
-	@include table;
-}
-
-/**
- * Menu Styles
- */
-
-ul.horizontal-menu {
-	@include horizontal-menu;
-}
-
-ul.menu {
-	@include menu;
-}
-
-ul.nav-menu {
-	@include nav-menu;
-}
-
-/**
- * Custom Styles
- */
-
 .row {
-	margin: 0 auto;
-	@include mq($mq-md) {
-		padding: 2em 0;
+	@include row();
+}
+
+/* html5 .navbar element */
+section.navigation {
+
+	.brand {
+		a {
+			font-family: Sabon-RomanSC, serif; 
+		}
 	}
 
-	.row {
-		width: 100%;
-		padding: 0;
+}
+
+/* html5 .showcase element */
+.showcase {
+
+	article {
+
+		.slide-content-outer {
+			position: absolute;
+			width: 100%;
+			height: 68vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.slide-content-inner {
+				@include outer-container();
+				width: 63vw;
+				padding: 0 ms(3);
+
+				.slide-title {
+					color: #fff;
+					font-size: ms(3);
+					line-height: 1.618;
+					margin: 0;
+					text-align: center;
+				}
+				.slide-content {
+					color: #fff;
+
+					p:first-child {
+						font-size: ms(1);
+						line-height: 1.618;
+						margin-top: 0;
+						text-align: center;
+					}
+
+					p + p {
+						font-size: ms(0);
+						line-height: 1.618;
+						text-align: center;
+						padding-bottom: ms(1);
+					}
+				}
+				.slide-button {
+					text-align: center;
+					margin-bottom: -0.5rem;
+					padding-top: 1rem;
+
+					a {
+						background: $accent2;
+						color: #fff;
+						font-size: ms(1);
+						padding: ms(0) ms(1);
+
+						&:hover {
+							@include background(tint($accent2, 3%));
+						}
+					}
+				}
+			}
+
+			@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+	    		.slide-content-inner {
+	        		-webkit-backdrop-filter: blur(4px);
+	        		backdrop-filter: blur(4px);
+	        		background-color: rgba(255,255,255, 0.075);  
+	    		}
+			}	
+		}
+		img {
+			width: 100%;
+		}
 	}
 }
 
-/* Page Header
- */
-header#mastead {
-
-}
-
-nav.row {
-	padding-bottom: 1em;
-}
-
-ul.nav-menu li a {
-	line-height: 80px;
-}
-
-/* Page Main Content
- */
-main#content {
-
-}
-
-$arrow-box-background: rgba(255,255,255,1);
-
-/* plain_box */
-.plain_box {
-	color: #333;
-	position: relative;
-	background: $arrow-box-background;
-	border: 1px solid $arrow-box-background;
-	margin-top: 1em !important;
-}
-
-/* arrow box */
-.arrow_box {
-	color: #333;
-	position: relative;
-	background: $arrow-box-background;
-	border: 1px solid $arrow-box-background;
-	border-radius: 3px;
-	margin-bottom: 1.5em;
-
-	@include mq($mq-md) {
-		margin-bottom: 0;
-	}
-}
-.arrow_box:after, .arrow_box:before {
-	bottom: 100%;
-	left: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-}
-
-.arrow_box:after {
-	border-color: rgba(255, 255, 255, 0);
-	border-bottom-color: $arrow-box-background;
-	border-width: 25px;
-	margin-left: -25px;
-}
-.arrow_box:before {
-	border-color: rgba(255, 255, 255, 0);
-	border-bottom-color: $arrow-box-background;
-	border-width: 26px;
-	margin-left: -26px;
+/* html5 <main> element */
+main {
+	padding-top: 5rem;
 }
 
 /* Highlights */
 .highlights {
+	padding: 1.5rem 0;
 
 	ul {
 		list-style: none;
@@ -183,33 +152,255 @@ $arrow-box-background: rgba(255,255,255,1);
 	}
 }
 
-/* Page Colophon
- */
-section#colophon {
+/* html5 .callout element */
+.callout {
+	padding: ms(2) 0;
 
-	.menu a {
-		padding-left: 0;
-		padding-right: 0;
+	.content {
+		@include span-columns(7);
 	}
-
+	.image {
+		@include span-columns(5);
+	}
 }
 
-/* Page Footer
- */
-footer#copyright {
+/* html5 .features element */
+.features {
 
-	.copyright {
-		@include col;
-		@include mq($mq-md) {
-				@include col(1/2);
+	.items {
+		@include row();	
+
+		.item {
+			@include span-columns(4);
+			@include omega(3n);
+			
+			margin-bottom: ms(1);
+			position: relative;
+
+			.text-content {
+				position: absolute;
+				bottom: 0.5rem;
+
+				h3 {
+					background: rgba(255,255,255,0.8);
+					font-size: 2em;
+					padding: 1rem 2rem 1rem 1rem;
+
+					a {
+						color: #222;
+					}
+				}
+
+				@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+		    		h3 {
+		        		-webkit-backdrop-filter: blur(2px);
+		        		backdrop-filter: blur(2px);
+		        		background-color: rgba(255,255,255, 0.6);  
+		    		}
+				}
+			}
+			.image-content {
+
+			}
+		}
+	}
+}
+
+/* html5 .highlights element */
+.highlights {
+
+	.items {
+		@include row();
+
+		.item {
+			@include span-columns(3);
+			@include omega(4n);
+			padding-bottom: ms(2);
+
+			i {
+				text-align: center;
+				display: block;
+			}
+			.title {
+				text-align: center;
+			}
+			.content {
+
+			}
+		}
+	}
+}
+
+/* html5 .contact element */
+.contact {
+	background: #f4f4f4;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+
+	.column {
+		@include span-columns(4);
+	}
+
+	h2 {
+		margin-bottom: 0.5em;
+		font-size: 3em;
+		margin-top: 0em;
+	}
+	.content {
+		@extend %border-box;
+		background: rgba(255,255,255,1);
+		padding: 1em;
+		margin-top: 3em;
+		text-align: left;
+
+		ul {
+			list-style: none;
+			padding: 0;
 		}
 
 	}
-	.social {
-		@include col;
-		@include mq($mq-md) {
-			@include col(1/2);
+
+	.alert {
+		background: rgb(149, 255, 162);
+		color: #333;
+		padding: 1em;
+		border-radius: 4px;
+	}
+
+	.form {
+		background: #fff;
+		margin-top: 3em;
+		padding: 0.15em 1em 1em;
+		border-radius: 3px;
+	}
+
+	form {
+
+		.form-field {
+			margin: 1em 0;
 		}
+
+		label {
+			display: none;
+		}
+
+		input,
+		textarea {
+			color: #333;
+			background: #eee;
+			border: 1px solid #ddd;
+
+			&:focus {
+
+			}
+		}
+
+		textarea {
+			height: 100px;
+		}
+
+		button {
+			border: 0;
+			background: rgb(80, 162, 254);
+			color: rgb(255,255,255);
+
+			&:hover {
+				background: darken(rgb(80, 162, 254), 10%);
+			}
+		}
+
+		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		    color:    #333;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #333;
+		   opacity:  1;
+		}
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #333;
+		   opacity:  1;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    #333;
+		}
+		:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+		  color:    #333;
+		}
+	}
+
+	.contact-phones {
+		margin-top: 3em;
+
+		ul {
+			list-style: none;
+			padding: 0 1em;
+
+			li {
+				strong {
+
+				}
+			}
+		}
+	}
+
+	.contact-social-media {
+		margin-top: 2em;
+	}
+
+	$circle-size: 70px;
+	a.fa-circle-bg {
+		display: block;
+		height: $circle-size;
+		width: $circle-size;
+		background: rgba(255,255,255,0.9);
+		overflow: hidden;
+		border-radius: $circle-size;
+		color: #333;
+		text-align: center;
+		line-height: $circle-size;
+		margin: 0 auto;
+
+		i {
+			line-height: $circle-size;
+		}
+	}
+}
+
+/* html5 .colophon element */
+section.colophon {
+	padding: 2.5rem 0;
+
+	.site-logo {
+		@include span-columns(2);
+		padding: ms(1);
+	}
+
+	.sunday-services {
+		@include span-columns(3);
+	}
+
+	.map {
+		@include span-columns(5);
+	}
+
+	.address {
+		@include span-columns(2);
+
+		ul {
+			list-style: none;
+			padding-left: 0;
+		}
+	}
+}
+
+/* global page footer */
+footer.copyright {
+
+	.copyright {
+		@include span-columns(6);
+	}
+	.social {
+		@include span-columns(6);
 
 		ul {
 			list-style: none;
@@ -232,31 +423,34 @@ footer#copyright {
 
 }
 
-#brandr {
-	padding-top: 0;
-	padding-bottom: 0;
+/* html5 .crafted-by-kh branding elements for the developer */
+.crafted-by-ky {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 	text-align: right;
 	background: #222;
-	color: #555;
+	color: #777;
 
 	a {
-		color: #777;
+		color: #aaa;
 
 		&:hover {
-			color: #999;
+			color: #ccc;
+		}
+	}
+
+	a.kh {
+		background: #444;
+		color: #ccc;
+		display: inline-block;
+		padding: ms(-3) ms(-2);
+
+		&:hover {
+			background: #555;
 		}
 	}
 }
 
-/* Modular Styles
- */
-@import 'modular-styles';
-@import 'contact';
-
-/* Home page
- */
-@import 'slider';
-
-/* Media Queries
-*/
-@import 'media-queries';
+// modular styles
+// @import 'modular-styles';
+@import 'arrow-boxes';

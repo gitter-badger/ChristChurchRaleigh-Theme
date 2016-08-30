@@ -36,10 +36,12 @@ class Ccr extends Theme
 	{
 		$this->grav['assets']
 			->addCSS('theme://css/slippry.css,', 15)
-			->addCss('theme://css-compiled/styles.css', 15);
+			->addCss('theme://css/compiled/styles.css', 15)
+			->addCss('theme://css/custom.css', 15);
 
 		$this->grav['assets']
 			->addJs('jquery', 101)
+			->addJs('theme://js/compiled/crafted.js')
 			->addJs('theme://js/slippry.min.js')
 			->addJs('theme://js/script.js')
 			->addJs('theme://js/ui.js');

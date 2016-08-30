@@ -1,0 +1,34 @@
+{
+  "name": "ccr",
+  "version": "1.0.0",
+  "description": "Theme for Christ Church Raleigh",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BluejayCo/ccr-theme.git"
+  },
+  "keywords": [
+    "theme",
+    "grav"
+  ],
+  "author": "Kaleb Heitzman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BluejayCo/ccr-theme/issues"
+  },
+  "homepage": "https://github.com/BluejayCo/ccr-theme#readme"
+}

@@ -1,0 +1,46 @@
+// arrow boxes used in the contact form
+$arrow-box-background: rgba(255,255,255,1);
+	
+/* plain_box */
+.plain_box {
+	color: #333;
+	position: relative;
+	background: $arrow-box-background;
+	border: 1px solid $arrow-box-background;
+	margin-top: 1em !important;
+}
+/* arrow box */
+.arrow_box {
+	color: #333;
+	position: relative;
+	background: $arrow-box-background;
+	border: 1px solid $arrow-box-background;
+	border-radius: 3px;
+	margin-bottom: 1.5em;
+
+	@include mq($mq-md) {
+		margin-bottom: 0;
+	}
+}
+.arrow_box:after, .arrow_box:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.arrow_box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: $arrow-box-background;
+	border-width: 25px;
+	margin-left: -25px;
+}
+.arrow_box:before {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: $arrow-box-background;
+	border-width: 26px;
+	margin-left: -26px;
+}

@@ -1,19 +1,12 @@
-
 <section id="showcase" class="showcase">
 {% for slide in page.header.slides %}
 	<article>
-		<div class="text-content">
-			<div class="row">
-				<div class="col-5-7 push-1-7">
-					<div class="slide-pull">
-						<h3>{{ slide.title }}</h3>
-					</div>
-					<div class="slide-pull">
-						<div class="content">{{ slide.content }}</div>
-					</div>
-					<div class="slide-pull">
-						<a href="{{ slide.button_link }}" class="button btn-xl">{{ slide.button_text }}</a>
-					</div>
+		<div class="slide-content-outer">
+			<div class="slide-content-inner">
+				<h3 class="slide-title">{{ slide.title }}</h3>
+				<div class="slide-content">{{ slide.content|markdown }}</div>
+				<div class="slide-button">
+					<a href="{{ slide.button_link }}">{{ slide.button_text }}</a>
 				</div>
 			</div>
 		</div>
@@ -22,4 +15,4 @@
 		</div>
 	</article>
 {% endfor %}
-</section>
+</section><!--.showcase-->

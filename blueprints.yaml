@@ -1,7 +1,7 @@
 name: Christ Church Raleigh
 version: 1.0.0
 
-description: "A **Grav** Theme for Crist Church on Capitol Hill in Raliegh, North Carolina"
+description: "A **Grav** Theme for Crist Church on Capitol Hill in Raleigh, North Carolina"
 
 icon: heart-o
 author:
@@ -11,7 +11,7 @@ author:
 
 homepage: https://github.com/kalebheitzman/grav-theme-pure
 demo: https://github.com/kalebheitzman/grav-theme-pure
-keywords: pure, theme, core, modern, fast, responsive, html5
+keywords: theme, core, modern, fast, responsive, html5
 bugs: https://github.com/kalebheitzman/grav-theme-pure/issues
 
 license: MIT
@@ -19,22 +19,52 @@ license: MIT
 form:
   validation: loose
   fields:
-    options:
-      type: spacer
+    theme.options:
+      type: section
       title: Theme Options
+      underline: true
     dropdown.enabled:
         type: toggle
         label: Dropdown in navbar
         highlight: 1
         default: 1
         options:
-          1: Enabled
-          0: Disabled
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
         validate:
           type: bool
+    colors.section:
+      type: section
+      title: Branding
+      underline: true
+    colors.primary:
+      type: text
+      size: large
+      label: Primary color
+      placeholder: "#003d6b"
+      default: "#003d6b"
+    colors.accent1:
+      type: text
+      size: large
+      label: Accent Color 1
+      placeholder: "#607c8c"
+      default: "#607c8c"
+    colors.accent2:
+      type: text
+      size: large
+      label: Accent Color 2
+      placeholder: "#7a2638"
+      default: "#7a2638"
+    colors.text:
+      type: text
+      size: large
+      label: Text Color
+      placeholder: "#000000"
+      default: "#000000"
     social.media:
-      type: spacer
+      type: section
       title: Social Media
+      underline: true
     social.facebook:
       type: text
       size: large
@@ -51,15 +81,3 @@ form:
       type: text
       size: large
       label: LinkedIn URL
-    social.spotify:
-      type: text
-      size: large
-      label: Spotify URL
-    social.soundcloud:
-      type: text
-      size: large
-      label: Soundcloud URL
-    social.pinterest:
-      type: text
-      size: large
-      label: Pinterest URL

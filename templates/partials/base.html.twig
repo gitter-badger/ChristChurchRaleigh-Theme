@@ -41,37 +41,24 @@
 </head>
 <body>
 
-<!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
-<a id="top"></a>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <a id="top"></a>
 
-{# Main Website #}
-<div class="wrapper">
+	{# include the header + navigation #}
+    {% include 'partials/header.html.twig' %}
 
-    <input data-function="swipe" id="swipe" type="checkbox">
-    <label data-function="swipe" for="swipe">&#9776;</label>
+    {# main page content #}
+    <main id="content" role="main">
+    	{% block content %}{% endblock %}
+    </main><!--/main-->
 
-    <div class="content">
+    {# include the colophon #}
+    {% include 'partials/colophon.html.twig' %}
 
-    	{# include the header + navigation #}
-        {% include 'partials/header.html.twig' %}
-
-        {# main page content #}
-        <main id="content" role="main">
-        	{% block content %}{% endblock %}
-        </main><!--/main-->
-
-        {# include the colophon #}
-        {% include 'partials/colophon.html.twig' %}
-
-    	{# include the footer #}
-        {% include 'partials/footer.html.twig' %}
-
-    </div><!--.content-->
-
-    {# include off canvas content #}
-    {% include 'partials/off-canvas.html.twig' %}
+	{# include the footer #}
+    {% include 'partials/footer.html.twig' %}
 
     {# javascripts #}
     {% block javascripts %}

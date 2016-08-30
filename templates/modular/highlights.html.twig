@@ -1,18 +1,16 @@
-<section class="highlights">
-	<div class="row">
-		<div class="col-1">
-			<h2>{{ page.title }}</h2>
-			{{ page.content }}
+<section class="highlights container">
 
-			<div class="row">
-				{% for highlight in page.header.highlights %}
-					<div class="col-1-4">
-						<i class="fa fa-{{ highlight.icon }} fa-5x"></i>
-						<h3>{{ highlight.title }}</h3>
-						<div>{{ highlight.content }}</div>
-					</div>
-				{% endfor %}
+	<h2 class="center">{{ page.title }}</h2>
+	{{ page.content }}
+
+	<div class="items">
+		{% for highlight in page.header.highlights %}
+			<div class="item">
+				<i class="fa fa-{{ highlight.icon }} fa-4x"></i>
+				<h3 class="title">{{ highlight.title }}</h3>
+				<div class="content">{{ highlight.content }}</div>
 			</div>
-		</div>
+		{% endfor %}
 	</div>
+
 </section>

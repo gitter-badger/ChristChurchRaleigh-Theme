@@ -1,12 +1,10 @@
-<section class="callout">
-	<div class="row">
-		<div class="col-4-7">
-			<h2>{{ page.title }}</h2>
-			{{ page.content }}
-		</div>
-		<div class="col-3-7">
-			{% set image = page.media.images|first %}
-			{{ image.cropZoom(500,300).html('','','') }}
-		</div>
+<section class="callout container">
+	<div class="content">
+		<h2>{{ page.title }}</h2>
+		{{ page.content }}
+	</div>
+	<div class="image">
+		{% set image = page.media.images|first %}
+		{{ image.cropZoom(500,300).html('','','') }}
 	</div>
 </section>
