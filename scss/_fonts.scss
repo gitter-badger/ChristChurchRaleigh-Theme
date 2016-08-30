@@ -25,8 +25,8 @@
 
 /* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/314983");  
-@font-face {font-family: 'Sabon-RomanOsF';src: url('../webfonts/314983_0_0.eot');src: url('../webfonts/314983_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/314983_0_0.woff2') format('woff2'),url('../webfonts/314983_0_0.woff') format('woff'),url('../webfonts/314983_0_0.ttf') format('truetype');} 
-@font-face {font-family: 'Sabon-RomanSC';src: url('../webfonts/314983_1_0.eot');src: url('../webfonts/314983_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/314983_1_0.woff2') format('woff2'),url('../webfonts/314983_1_0.woff') format('woff'),url('../webfonts/314983_1_0.ttf') format('truetype');}
+@font-face {font-family: 'Sabon-RomanOsF';src: url('../../webfonts/314983_0_0.eot');src: url('../../webfonts/314983_0_0.eot?#iefix') format('embedded-opentype'),url('../../webfonts/314983_0_0.woff2') format('woff2'),url('../../webfonts/314983_0_0.woff') format('woff'),url('../../webfonts/314983_0_0.ttf') format('truetype');} 
+@font-face {font-family: 'Sabon-RomanSC';src: url('../../webfonts/314983_1_0.eot');src: url('../../webfonts/314983_1_0.eot?#iefix') format('embedded-opentype'),url('../../webfonts/314983_1_0.woff2') format('woff2'),url('../../webfonts/314983_1_0.woff') format('woff'),url('../../webfonts/314983_1_0.ttf') format('truetype');}
  
 // fonts
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);

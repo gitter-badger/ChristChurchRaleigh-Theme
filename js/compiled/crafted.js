@@ -7,9 +7,17 @@
   (function($) {
     $(function() {
       $('nav ul li > a:not(:only-child)').click(function(e) {
+        var $anchor;
+        $anchor = $(this);
+        if ($anchor.attr('data-proceed') === 'true') {
+          window.location.href = $anchor.attr('href');
+        } else {
+          $anchor.attr('data-proceed', true);
+        }
         $(this).siblings('.nav-dropdown').toggle();
         $('.nav-dropdown').not($(this).siblings()).hide();
         e.stopPropagation();
+        return false;
       });
       $('html').click(function() {
         $('.nav-dropdown').hide();
