@@ -1,0 +1,48 @@
+form:
+  fields:
+    header.styles.breakout:
+      label: Push to viewport edge?
+      help: Break out of the container and push the element to viewport edge. This automatically assumes the element is a single row in the grid.
+      type: toggle
+      highlight: 1
+      default: 0
+      options:
+        1: Yes
+        0: No
+      validate:
+        type: bool
+    header.styles.row_start:
+      label: Starts a new row
+      help: This item starts a new row on the grid.
+      type: toggle
+      highlight: 1
+      default: 0
+      options: 
+        1: Yes
+        0: No
+      validate:
+        type: bool
+    header.styles.row_end:
+      label: Ends a row
+      help: This item ends a row on the grid.
+      type: toggle
+      highlight: 1
+      default: 0
+      options: 
+        1: Yes
+        0: No
+      validate:
+        type: bool
+    header.styles.grid_size:
+      type: radio
+      label: Grid size
+      default: full-width
+      options:
+        full-width: Full Width 
+        one-half: One Half 
+        one-third: One Third 
+        two-thirds: Two Thirds 
+    header.styles.custom_css:
+      type: text
+      label: Custom CSS classes
+      placeholder: css classes separated by spaces

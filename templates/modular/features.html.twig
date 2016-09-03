@@ -1,11 +1,16 @@
-{{ page.content }}
+<section class="features">
+	
+	<h2>{{ page.title }}</h2>
+	{{ page.content }}
 
-<ul>
-	{% for feature in page.header.features %}
-		<li>
-			<i class="fa fa-{{ feature.icon }} fa-2x"></i>
-			<h3>{{ feature.title }}</h3>
-			<div>{{ feature.content }}</div>
-		</li>
-	{% endfor %}
-</ul>
+	<ul>
+		{% for feature in page.header.features %}
+			<li>
+				<i class="fa fa-{{ feature.icon }} fa-2x"></i>
+				<h3>{{ feature.title }}</h3>
+				<div>{{ feature.content }}</div>
+			</li>
+		{% endfor %}
+	</ul>
+
+</section>

@@ -1,41 +1,41 @@
 <section class="contact">
-	<div class="container">
-		<div class="address column">
-			<a href="#" class="fa-circle-bg"><i class="fa fa-location-arrow fa-2x"></i></a>
-			<div class="arrow_box content">
-				<h2><span>{{ page.title }}</span></h2>
-				{{ page.content }}
-				{{ header.contact.address|markdown }}
-			</div>
-		</div>
 
-		<div class="phone column">	
-			<a href="#" class="fa-circle-bg"><i class="fa fa-phone fa-2x"></i></a>
-			<div class="contact-phones">
-				<div class="arrow_box">
-					{# phones #}
-					<ul>
-					{% for key,value in header.contact.phones %}
-						<li><strong>{{ key }} Contact</strong><br />{{ value }}</li>
-					{% endfor %}
-					</ul>
-					{# emails #}
-					<ul>
-					{% for key,value in header.contact.emails %}
-						<li><strong>{{ key }} Email</strong><br />{{ value|safe_email }}</li>
-					{% endfor %}
-					</ul>
-				</div>
-			</div>
+	<div class="address column">
+		<a href="#" class="fa-circle-bg"><i class="fa fa-location-arrow fa-2x"></i></a>
+		<div class="arrow_box content">
+			<h2><span>{{ page.title }}</span></h2>
+			{{ page.content }}
+			{{ header.contact.address|markdown }}
 		</div>
+	</div>
 
-		{# emails #}
-		<div class="email column">
-			<a href="#" class="fa-circle-bg"><i class="fa fa-comments fa-2x"></i></a>
-			<div class="arrow_box form">
-				<h3>Send us a message</h3>
-				{% include "forms/form.html.twig" %}
+	<div class="phone column">	
+		<a href="#" class="fa-circle-bg"><i class="fa fa-phone fa-2x"></i></a>
+		<div class="contact-phones">
+			<div class="arrow_box">
+				{# phones #}
+				<ul>
+				{% for key,value in header.contact.phones %}
+					<li><strong>{{ key }} Contact</strong><br />{{ value }}</li>
+				{% endfor %}
+				</ul>
+				{# emails #}
+				<ul>
+				{% for key,value in header.contact.emails %}
+					<li><strong>{{ key }} Email</strong><br />{{ value|safe_email }}</li>
+				{% endfor %}
+				</ul>
 			</div>
 		</div>
-	</div>	
+	</div>
+
+	{# emails #}
+	<div class="email column">
+		<a href="#" class="fa-circle-bg"><i class="fa fa-comments fa-2x"></i></a>
+		<div class="arrow_box form">
+			<h3>Send us a message</h3>
+			{% include "forms/form.html.twig" %}
+		</div>
+	</div>
+
 </section><!--.contact-->

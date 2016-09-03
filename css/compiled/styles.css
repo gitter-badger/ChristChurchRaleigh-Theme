@@ -1172,12 +1172,48 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     display: block; }
 
+.breakout {
+  width: 100vw;
+  overflow: hidden; }
+
 .row {
   display: block; }
   .row::after {
     clear: both;
     content: "";
     display: block; }
+
+.one-half {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .one-half:last-child {
+    margin-right: 0; }
+
+.one-third {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%; }
+  .one-third:last-child {
+    margin-right: 0; }
+
+.two-thirds {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%; }
+  .two-thirds:last-child {
+    margin-right: 0; }
+
+.full-width {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .full-width:last-child {
+    margin-right: 0; }
 
 /* html5 .navbar element */
 section.navigation .brand a {
@@ -1327,93 +1363,255 @@ section.navigation .brand a {
       text-align: center; }
 
 /* html5 .contact element */
-.contact {
+#contact {
   background: #f4f4f4;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem; }
-  .contact .column {
+
+.contact .column {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%; }
+  .contact .column:last-child {
+    margin-right: 0; }
+
+.contact h2 {
+  margin-bottom: 0.5em;
+  font-size: 3em;
+  margin-top: 0em; }
+
+.contact .content {
+  background: white;
+  padding: 1em;
+  margin-top: 3em;
+  text-align: left; }
+  .contact .content ul {
+    list-style: none;
+    padding: 0; }
+
+.contact .alert {
+  background: #95ffa2;
+  color: #333;
+  padding: 1em;
+  border-radius: 4px; }
+
+.contact .form {
+  background: #fff;
+  margin-top: 3em;
+  padding: 0.15em 1em 1em;
+  border-radius: 3px; }
+
+.contact form .form-field {
+  margin: 1em 0; }
+
+.contact form label {
+  display: none; }
+
+.contact form input,
+.contact form textarea {
+  color: #333;
+  background: #eee;
+  border: 1px solid #ddd; }
+
+.contact form textarea {
+  height: 100px; }
+
+.contact form button {
+  border: 0;
+  background: #50a2fe;
+  color: white; }
+  .contact form button:hover {
+    background: #1d87fe; }
+
+.contact form ::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #333; }
+
+.contact form :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #333;
+  opacity: 1; }
+
+.contact form ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #333;
+  opacity: 1; }
+
+.contact form :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #333; }
+
+.contact form :placeholder-shown {
+  /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color: #333; }
+
+.contact .contact-phones {
+  margin-top: 3em; }
+  .contact .contact-phones ul {
+    list-style: none;
+    padding: 0 1em; }
+
+.contact .contact-social-media {
+  margin-top: 2em; }
+
+.contact a.fa-circle-bg {
+  display: block;
+  height: 70px;
+  width: 70px;
+  background: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  border-radius: 70px;
+  color: #333;
+  text-align: center;
+  line-height: 70px;
+  margin: 0 auto; }
+  .contact a.fa-circle-bg i {
+    line-height: 70px; }
+
+/* html5 .cards element */
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.card {
+  background-color: #f6f6f6;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px #e6e6e6;
+  cursor: pointer;
+  flex-basis: 15em;
+  flex-grow: 1;
+  margin: 0 1em 1.5em 1em;
+  position: relative;
+  transition: all 0.2s ease-in-out; }
+  .card .card-image {
+    background-color: #F8F2B4;
+    height: 150px;
+    max-height: 150px;
+    overflow: hidden; }
+    .card .card-image img {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      width: 100%; }
+  .card .card-header {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid gainsboro;
+    border-radius: 3px 3px 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: 0.5em 0.75em;
+    transition: all 0.2s ease-in-out; }
+  .card .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: 0.75em 0.75em; }
+    .card .card-copy p {
+      margin: 0 0 0.75em; }
+  .card:focus, .card:hover {
+    cursor: pointer; }
+    .card:focus img, .card:hover img {
+      opacity: 0.7; }
+  .card:active {
+    background-color: #f6f6f6; }
+    .card:active .card-header {
+      background-color: #f6f6f6; }
+
+/* html5 .maps element */
+.maps #map_canvas {
+  height: 400px;
+  width: 100%; }
+
+.maps #map_canvas img {
+  max-width: none; }
+
+.maps #map_canvas .content {
+  padding: 0 0.5em 1em 0.5em; }
+
+.maps #map_canvas .firstHeading {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 0; }
+
+.maps #map_canvas #bodyContent p {
+  font-size: 1em;
+  margin: 0; }
+
+/* html5 .expandable element */
+.expander {
+  width: 100%; }
+  .expander .expander-trigger {
+    border-bottom: 1px solid #DDD;
+    color: #477DCA;
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.25em;
+    text-decoration: none;
+    user-select: none; }
+    .expander .expander-trigger::before {
+      content: "\25BC";
+      font-size: 0.7em;
+      margin-right: 0.5em; }
+  .expander .expander-content p {
+    color: #333;
+    line-height: 1.5em; }
+  .expander .expander-hidden::before {
+    content: "\25BA";
+    font-size: 0.7em; }
+  .expander .expander-hidden + .expander-content {
+    display: none; }
+
+/* html5 .acs-calendar element */
+.acs-calendar td {
+  padding: 0.23607em 0.38197em; }
+
+.acs-calendar tbody tr {
+  height: 15vh;
+  vertical-align: top; }
+
+.acs-calendar ul.day-list {
+  list-style: none;
+  padding-left: 0; }
+  .acs-calendar ul.day-list li.event {
+    font-size: 0.9rem;
+    line-height: 1;
+    padding-bottom: 0.5rem;
+    background: #f7f7f7;
+    border: 1px solid #efefef; }
+  .acs-calendar ul.day-list li.event:nth-of-type(1n+3) {
+    display: none; }
+
+.acs-calendar ul.day-list:hover {
+  position: absolute; }
+  .acs-calendar ul.day-list:hover li {
+    display: block; }
+
+/* html5 .acs-events-module */
+.acs-events-module {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .acs-events-module::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .acs-events-module .day-listing {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 31.76157%; }
-    .contact .column:last-child {
+    .acs-events-module .day-listing:last-child {
       margin-right: 0; }
-  .contact h2 {
-    margin-bottom: 0.5em;
-    font-size: 3em;
-    margin-top: 0em; }
-  .contact .content {
-    background: white;
-    padding: 1em;
-    margin-top: 3em;
-    text-align: left; }
-    .contact .content ul {
-      list-style: none;
-      padding: 0; }
-  .contact .alert {
-    background: #95ffa2;
-    color: #333;
-    padding: 1em;
-    border-radius: 4px; }
-  .contact .form {
-    background: #fff;
-    margin-top: 3em;
-    padding: 0.15em 1em 1em;
-    border-radius: 3px; }
-  .contact form .form-field {
-    margin: 1em 0; }
-  .contact form label {
-    display: none; }
-  .contact form input,
-  .contact form textarea {
-    color: #333;
-    background: #eee;
-    border: 1px solid #ddd; }
-  .contact form textarea {
-    height: 100px; }
-  .contact form button {
-    border: 0;
-    background: #50a2fe;
-    color: white; }
-    .contact form button:hover {
-      background: #1d87fe; }
-  .contact form ::-webkit-input-placeholder {
-    /* WebKit, Blink, Edge */
-    color: #333; }
-  .contact form :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: #333;
-    opacity: 1; }
-  .contact form ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: #333;
-    opacity: 1; }
-  .contact form :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #333; }
-  .contact form :placeholder-shown {
-    /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
-    color: #333; }
-  .contact .contact-phones {
-    margin-top: 3em; }
-    .contact .contact-phones ul {
-      list-style: none;
-      padding: 0 1em; }
-  .contact .contact-social-media {
-    margin-top: 2em; }
-  .contact a.fa-circle-bg {
-    display: block;
-    height: 70px;
-    width: 70px;
-    background: rgba(255, 255, 255, 0.9);
-    overflow: hidden;
-    border-radius: 70px;
-    color: #333;
-    text-align: center;
-    line-height: 70px;
-    margin: 0 auto; }
-    .contact a.fa-circle-bg i {
-      line-height: 70px; }
+    .acs-events-module .day-listing:nth-child(3n) {
+      margin-right: 0; }
+    .acs-events-module .day-listing:nth-child(3n+1) {
+      clear: left; }
 
 /* html5 .colophon element */
 section.colophon {
@@ -1495,6 +1693,21 @@ footer.copyright .social {
     padding: 0.23607em 0.38197em; }
     .crafted-by-ky a.kh:hover {
       background: #555; }
+
+/* html5 responsive video embeds */
+.video-wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative; }
+  .video-wrapper embed,
+  .video-wrapper object,
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
 
 /* plain_box */
 .plain_box {

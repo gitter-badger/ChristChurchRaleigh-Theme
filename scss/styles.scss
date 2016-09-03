@@ -51,8 +51,24 @@ h1, h2, h3, h4, h5, h6 {
 .container {
 	@include outer-container();
 }
+.breakout {
+	width: 100vw;
+	overflow: hidden;
+}
 .row {
 	@include row();
+}
+.one-half {
+	@include span-columns(6);
+}
+.one-third {
+	@include span-columns(4);
+}
+.two-thirds {
+	@include span-columns(8);
+}
+.full-width {
+	@include span-columns(12);
 }
 
 /* html5 .navbar element */
@@ -235,10 +251,12 @@ main {
 }
 
 /* html5 .contact element */
-.contact {
+#contact {
 	background: #f4f4f4;
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
+}
+.contact {
 
 	.column {
 		@include span-columns(4);
@@ -369,6 +387,220 @@ main {
 	}
 }
 
+/* html5 .cards element */
+.cards {
+
+}
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+  $card-margin: 1em;
+  $card-image-hover-opacity: 0.7;
+  $card-image-hover-color: #F8F2B4;
+
+  background-color: $card-background;
+  border: $card-border;
+  border-radius: $base-border-radius;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  flex-basis: 15em;
+  flex-grow: 1;
+  margin: 0 $card-margin $base-spacing $card-margin;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  .card-image {
+    background-color: $card-image-hover-color;
+    height: 150px;
+    max-height: 150px;
+    overflow: hidden;
+
+    img {
+      @include border-top-radius($base-border-radius);
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+  }
+
+  .card-header {
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: $card-image-hover-opacity;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  }
+}
+
+/* html5 .maps element */
+.maps {
+	#map_canvas {
+	  height: 400px;
+	  width: 100%;
+	}
+
+	#map_canvas img {
+	  max-width: none; // to prevent UI control bug
+	}
+
+	#map_canvas .content {
+	  padding: 0 0.5em 1em 0.5em;
+	}
+
+	#map_canvas .firstHeading {
+	  font-size: 1em;
+	  font-weight: bold;
+	  line-height: 1em;
+	  margin: 0;
+	}
+
+	#map_canvas #bodyContent p {
+	  font-size: 1em;
+	  margin: 0;
+	}
+}
+
+/* html5 .expandable element */
+.expander {
+  $base-font-size: 1em !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $base-font-color: $dark-gray !default;
+  $expander-arrow-width: 0.7em;
+  $expander-toggle-size: 1em;
+  $expander-toggle-arrow-size: $expander-toggle-size;
+  $expander-toggle-margin: 1em;
+
+  width: 100%;
+
+  .expander-trigger {
+    border-bottom: 1px solid $light-gray;
+    color: $action-color;
+    cursor: pointer;
+    display: block;
+    font-size: $expander-toggle-size;
+    margin-bottom: $expander-toggle-size;
+    padding-bottom: $expander-toggle-size / 4;
+    text-decoration: none;
+    user-select: none;
+
+    &::before {
+      content: "\25BC";
+      font-size: $expander-arrow-width;
+      margin-right: 0.5em;
+    }
+  }
+
+  .expander-content p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  .expander-hidden {
+    &::before {
+      content: "\25BA";
+      font-size: $expander-arrow-width;
+    }
+  }
+
+  .expander-hidden + .expander-content {
+    display: none;
+  }
+}
+
+/* html5 .acs-calendar element */
+.acs-calendar {
+
+	td {
+		padding: ms(-3) ms(-2);
+	}
+	tbody {
+		tr {
+			height: 15vh;
+			vertical-align: top;
+		}
+	}
+	ul.day-list {
+		list-style: none;
+		padding-left: 0;
+
+		li.event {
+			font-size: 0.9rem;
+			line-height: 1;
+			padding-bottom: 0.5rem;
+			background: #f7f7f7;
+			border: 1px solid #efefef;
+		}
+
+		li.event:nth-of-type(1n+3) {
+			display: none;
+		}
+	}
+	ul.day-list:hover {
+		position: absolute;
+
+		li {
+			display: block;
+		}
+	}
+}
+
+/* html5 .acs-events-module */
+.acs-events-module {
+	@include outer-container;
+
+	.day-listing {
+		@include span-columns(4);
+		@include omega(3n);
+	}
+}
+
 /* html5 .colophon element */
 section.colophon {
 	padding: 2.5rem 0;
@@ -452,6 +684,21 @@ footer.copyright {
 			background: #555;
 		}
 	}
+}
+
+/* html5 responsive video embeds */
+.video-wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+  position: relative;
+
+  embed,
+  object,
+  iframe {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+  }
 }
 
 // modular styles

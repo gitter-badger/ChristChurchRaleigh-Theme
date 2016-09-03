@@ -1,4 +1,4 @@
-title: Callout
+title: Content
 '@extends':
     type: default
     context: blueprints://pages

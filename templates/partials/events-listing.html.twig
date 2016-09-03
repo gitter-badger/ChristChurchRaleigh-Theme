@@ -1,0 +1,30 @@
+{% set last_day = null %}
+{% for event in events %}
+	{% set current_day = event.StartDate|date('j') %}
+
+	{% if last_day != current_day %}
+		{% if last_day != null %}
+			</ul>
+		</div><!--.day-listing-->
+		{% endif %}
+	<div class="day-listing">
+		<h3>{{ event.StartDate|date('l, F j') }}</h3>
+		<ul class="event-listing">
+	{% endif %}
+
+			<li>
+				<div class="event-title">
+					<a href="#!" data-event-id="{{ event.EventId }}">{{ event.EventName }}</a>
+					<span class="event-location">{{ event.Location }}</span>
+					<span class="event-dates">
+						{% set startDate = event.StartDate|date('g:ia') %}
+						{% if startDate != '12:00am' %}
+							at {{ startDate }}
+						{% endif %}
+					</span>
+				<div class="event-description">{{ event.EventDescription }}</div>
+			</li>
+
+	{% set last_day = current_day %}
+	
+{% endfor %}

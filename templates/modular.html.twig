@@ -4,12 +4,10 @@
 
 {% block stylesheets %}
 	{{ parent() }}
-
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-
 {% endblock %}
 
 {% block bottom %}
@@ -19,8 +17,35 @@
 {% block content %}
 	{{ page.content }}
 	{% for module in page.collection() %}
-		<section id="{{ _self.pageLinkName(module.menu) }}">
-		    {{ module.content }}
-		</section>
+
+		{# start breakout #}
+		{% if module.header.styles.breakout == true %}
+			<div id="{{ module.slug|ltrim('_') }}" class="breakout">
+		{# start cointainer #}
+		{% elseif module.header.styles.row_start == true %}
+			<div class="container">
+		{% endif %}
+
+		{# module content #}
+		{% if module.header.styles.breakout == true %}
+			<div class="container">
+				<div class="full-width">
+					{{ module.content }}
+				</div>
+			</div>
+		{% else %}
+			<div id="{{ module.slug|ltrim('_') }}" class="{{ module.header.styles.grid_size }}">
+				{{ module.content }}
+			</div>
+		{% endif %}
+
+		{# end breakout #}
+		{% if module.header.styles.breakout == true %}
+			</div><!--#{{ module.slug|ltrim('_') }}.breakout-->
+		{# end container #}
+		{% elseif module.header.styles.row_end == true %}
+			</div><!--.container-->
+		{% endif %}
+
     {% endfor %}
 {% endblock %}
