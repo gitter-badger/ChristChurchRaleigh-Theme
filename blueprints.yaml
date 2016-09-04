@@ -77,7 +77,12 @@ form:
       type: text
       size: large
       label: Instagram URL
-    social.linkedin:
+    social.flickr:
       type: text
       size: large
-      label: LinkedIn URL
+      label: Flickr URL
+    social.soundcloud:
+      type: text
+      size: large
+      label: SoundCloud URL
+

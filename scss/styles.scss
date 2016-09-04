@@ -603,7 +603,64 @@ main {
 
 /* html5 .colophon element */
 section.colophon {
-	padding: 2.5rem 0;
+	padding: 1.5rem 0;
+	background: $primary;
+	color: #fff;
+
+	h2 {
+		font-size: ms(1);
+		border-bottom: 1px dotted tint($primary, 25);
+		margin-bottom: 0;
+	}
+	h3 {
+		color: tint($accent1, 33);
+
+		font-size: ms(0);
+		font-family: 'Lato', sans-serif;
+		font-weight: normal;
+
+		line-height: 1;
+
+		text-transform: uppercase;
+	}
+
+	a {
+		color: tint($accent1, 33);
+
+		&:hover {
+			color: #fff;
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: ms(-3) 0;
+		padding-left: 0;
+	}
+
+	.left-column {
+		@include span-columns(4);
+	}
+
+	.right-column {
+
+		ul {
+			li:nth-child(2n) {
+				padding-bottom: ms(0);
+			}
+		}
+
+		@include span-columns(8);
+
+		.sundays,
+		.weekdays {
+			@include span-columns(1 of 2);
+
+		}
+	}
+
+
+
 
 	.site-logo {
 		@include span-columns(2);
@@ -631,6 +688,9 @@ section.colophon {
 /* global page footer */
 footer.copyright {
 
+	background: shade($primary, 15);
+	color: #fff;
+
 	.copyright {
 		@include span-columns(6);
 	}
@@ -646,10 +706,10 @@ footer.copyright {
 				margin-left: 0.75em;
 
 				a {
-					color: #777;
+					color: tint($primary, 40);
 
 					&:hover {
-						color: #999;
+						color: tint($primary, 60);
 					}
 				}
 			}

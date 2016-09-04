@@ -1615,7 +1615,53 @@ section.navigation .brand a {
 
 /* html5 .colophon element */
 section.colophon {
-  padding: 2.5rem 0; }
+  padding: 1.5rem 0;
+  background: #003D6B;
+  color: #fff; }
+  section.colophon h2 {
+    font-size: 1.61803em;
+    border-bottom: 1px dotted #406e90;
+    margin-bottom: 0; }
+  section.colophon h3 {
+    color: #94a7b2;
+    font-size: 1em;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: uppercase; }
+  section.colophon a {
+    color: #94a7b2; }
+    section.colophon a:hover {
+      color: #fff; }
+  section.colophon ul {
+    list-style: none;
+    margin: 0.23607em 0;
+    padding-left: 0; }
+  section.colophon .left-column {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    section.colophon .left-column:last-child {
+      margin-right: 0; }
+  section.colophon .right-column {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%; }
+    section.colophon .right-column ul li:nth-child(2n) {
+      padding-bottom: 1em; }
+    section.colophon .right-column:last-child {
+      margin-right: 0; }
+    section.colophon .right-column .sundays,
+    section.colophon .right-column .weekdays {
+      float: left;
+      display: block;
+      margin-right: 16.03631%;
+      width: 41.98184%; }
+      section.colophon .right-column .sundays:last-child,
+      section.colophon .right-column .weekdays:last-child {
+        margin-right: 0; }
   section.colophon .site-logo {
     float: left;
     display: block;
@@ -1650,30 +1696,32 @@ section.colophon {
       padding-left: 0; }
 
 /* global page footer */
-footer.copyright .copyright {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 48.82117%; }
-  footer.copyright .copyright:last-child {
-    margin-right: 0; }
-
-footer.copyright .social {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 48.82117%; }
-  footer.copyright .social:last-child {
-    margin-right: 0; }
-  footer.copyright .social ul {
-    list-style: none; }
-    footer.copyright .social ul li {
-      display: inline-block;
-      margin-left: 0.75em; }
-      footer.copyright .social ul li a {
-        color: #777; }
-        footer.copyright .social ul li a:hover {
-          color: #999; }
+footer.copyright {
+  background: #00345b;
+  color: #fff; }
+  footer.copyright .copyright {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    footer.copyright .copyright:last-child {
+      margin-right: 0; }
+  footer.copyright .social {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    footer.copyright .social:last-child {
+      margin-right: 0; }
+    footer.copyright .social ul {
+      list-style: none; }
+      footer.copyright .social ul li {
+        display: inline-block;
+        margin-left: 0.75em; }
+        footer.copyright .social ul li a {
+          color: #668ba6; }
+          footer.copyright .social ul li a:hover {
+            color: #99b1c4; }
 
 /* html5 .crafted-by-kh branding elements for the developer */
 .crafted-by-ky {

@@ -8,7 +8,7 @@
 	{% set params = page.header.acs %}
 	{% set events = acs.getFSListOfEvents(params) %}
 
-	{#% include "partials/calendar.html.twig" with { 'events': events } %#}
+	{% include "partials/calendar.html.twig" with { 'events': events } %}
 	<div class="acs-events-module">
 		{% include "partials/events-listing.html.twig" with { 'events': events } %}
 	</div>

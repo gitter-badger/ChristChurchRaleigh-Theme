@@ -1,11 +1,12 @@
 <?php
 /*
-    __    __             _
-   / /_  / /_  _____    (_)___ ___  ___________
-  / __ \/ / / / / _ \  / / __ `/ / / / ___/ __ \
- / /_/ / / /_/ /  __/ / / /_/ / /_/ / /__/ /_/ /
-/_.___/_/\__,_/\___/_/ /\__,_/\__, /\___/\____/
-                  /___/      /____/  thebluejay.co */
+  _          _ _                             
+ | |        (_) |                            
+ | |__   ___ _| |_ _____ __ ___   __ _ _ __  
+ | '_ \ / _ \ | __|_  / '_ ` _ \ / _` | '_ \ 
+ | | | |  __/ | |_ / /| | | | | | (_| | | | |
+ |_| |_|\___|_|\__/___|_| |_| |_|\__,_|_| |_|      
+                      kaleb heitzman (c) 2016   */
 
 namespace Grav\Theme;
 
@@ -45,5 +46,23 @@ class Ccr extends Theme
 			->addJs('theme://js/slippry.min.js')
 			->addJs('theme://js/script.js')
 			->addJs('theme://js/ui.js');
+	}
+
+	public function fetchSoundcloudAudio()
+	{
+		// build our API URL
+		$url = "http://api.soundcloud.com/reslove.json?"
+			. "url=http://soundcloud.com"
+			. "USERNAME"
+			. "&client_id=CLIENTID";
+
+		// grab the contents of the URL
+		$user_json = file_get_contents($url);
+
+		// decode the JSON to a PHP Object
+		$user = json_decode($user_json);
+
+		// print out the User ID
+		echo $user->id;
 	}
 }
