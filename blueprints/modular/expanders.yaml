@@ -1,0 +1,50 @@
+title: Content
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        
+        options:
+          fields:
+            section:
+              type: section
+              title: Styles
+              underline: true
+              import@:
+                type: partials/styles
+                context: blueprints://pages
+
+        expanders:
+          type: tab
+          title: Expanders
+          fields:
+            header.expanders:
+              name: expanders
+              type: list
+              size: long
+              style: vertical
+
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .content:
+                  type: textarea
+                  label: Content
+                  size: large
+                .image:
+                  type: pagemediaselect
+                  label: Image
+                  help: Upload your images in the Content tab and hit save, then they will show up here.
+                .button_text:
+                  type: text
+                  label: Button Text
+                  default: More Info
+                .button_link:
+                  type: text
+                  label: Button Link
+                  default: '#'

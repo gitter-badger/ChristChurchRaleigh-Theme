@@ -1,4 +1,4 @@
-title: Callout
+title: Maps
 '@extends':
     type: default
     context: blueprints://pages

@@ -8,6 +8,16 @@ form:
     tabs:
       fields:
                 
+        options:
+          fields:
+            section:
+              type: section
+              title: Styles
+              underline: true
+              import@:
+                type: partials/styles
+                context: blueprints://pages
+                
         advanced:
           fields:
             columns:

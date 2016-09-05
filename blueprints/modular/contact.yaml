@@ -11,18 +11,12 @@ form:
         options:
           fields:
             section:
-              type: spacer
-              title: Advanced
-            header.inpage_menu:
-              label: Show in Menu
-              type: toggle
-              highlight: 1
-              default: 1
-              options: 
-                1: Enabled
-                0: Disabled
-              validate:
-                type: bool
+              type: section
+              title: Styles
+              underline: true
+              import@:
+                type: partials/styles
+                context: blueprints://pages
 
         advanced:
           fields:

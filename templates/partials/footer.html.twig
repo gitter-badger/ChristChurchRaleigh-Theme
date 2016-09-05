@@ -1,16 +1,20 @@
-<footer id="copyright" class="copyright container" role="contentinfo">
+<footer id="copyright" class="copyright" role="contentinfo">
 
-	<div class="copyright">
-		<p>&copy; {{ "now"|date("Y") }} {{ site.title }}.
-	</div>
+	<div class="container">
 
-	<div class="social right">
-		{% include 'partials/social_media.html.twig' with { 'icon_size': 'fa-2x' } %}
+		<div class="copyright">
+			<p>&copy; {{ "now"|date("Y") }} {{ site.title }}.</p>
+		</div>
+
+		<div class="social">
+			{% include 'partials/social_media.html.twig' with { 'icon_size': 'fa-2x' } %}
+		</div>
+
 	</div>
 
 </footer><!--/copyright-->
 
-<section class="crafted-by-ky" role="">
+<section class="crafted-by-kh" role="">
 	<div class="container">
 		<p>Made with <a href="https://getgrav.org" target="_blank">Grav</a> /  Crafted by <a href="http://heitzman.co" target="_blank" class="kh">KH</a></p>
 	</div>

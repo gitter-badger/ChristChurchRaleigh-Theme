@@ -10,9 +10,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="image-content">
-			{{ page.media[slide.image].cropZoom(960,380).html('Image') }}
-		</div>
+		<div class="image-content" style="background-image: url({{ page.media[slide.image].cropZoom(960,380).url() }}); "></div>
 	</article>
 {% endfor %}
 </section><!--.showcase-->

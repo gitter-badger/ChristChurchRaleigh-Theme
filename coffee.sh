@@ -1,1 +1,0 @@
-coffee -w -o js-compiled/ -c coffeescripts/
