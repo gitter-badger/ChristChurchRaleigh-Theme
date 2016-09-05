@@ -1,0 +1,70 @@
+/* html5 .header element */
+.header {
+	@include outer-container();
+	@include background(#fff);
+	height: $nav-height;
+	overflow: hidden;
+
+	@include media($tablet) {
+		height: 8rem;
+	}
+
+	a {
+		color: $text;
+	}
+	
+	.site-logo {
+		text-align: center;
+		@include span-columns(2);
+
+		img {
+			height: 3.95rem;
+			margin: 8px 0 0 4px;
+		}
+
+		@include media($tablet) {
+			@include shift(5);
+			margin-top: 10px;
+
+			img {
+				height: 7rem;
+				padding-bottom: ms(0);
+			}
+		}
+	}
+
+	.site-title {
+		@include span-columns(8);
+		@include omega();
+
+		font-size: 1.1rem;
+		line-height: 2.5;
+		text-indent: 10px;
+
+		@include media($tablet) {
+			@include shift(-7);
+			margin-top: ms(1);
+			text-indent: 0;
+			font-size: ms(1);
+		}
+	}
+
+	.featured-links {
+		display: none;
+
+		@include media($tablet) {
+			display: block;
+			list-style:  none;
+			float: right;
+			margin-top: ms(3);
+
+			li {
+				display: inline;
+
+				a {
+					padding: ms(0) ms(0);
+				}
+			}
+		}
+	}
+}

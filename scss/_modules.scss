@@ -1,0 +1,439 @@
+/* Highlights */
+.highlights {
+	padding: 1.5rem 0;
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+}
+
+/* html5 .callout element */
+.callout {
+	padding: ms(2) 0;
+
+	.content {
+		@include span-columns(7);
+	}
+	.image {
+		@include span-columns(5);
+	}
+}
+
+/* html5 .features element */
+.features {
+
+	.items {
+		@include row();	
+
+		.item {
+			@include span-columns(4);
+			@include omega(3n);
+			
+			margin-bottom: ms(1);
+			position: relative;
+
+			.text-content {
+				position: absolute;
+				bottom: 0.5rem;
+
+				h3 {
+					background: rgba(255,255,255,0.8);
+					font-size: 2em;
+					padding: 1rem 2rem 1rem 1rem;
+
+					a {
+						color: #222;
+					}
+				}
+
+				@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+		    		h3 {
+		        		-webkit-backdrop-filter: blur(2px);
+		        		backdrop-filter: blur(2px);
+		        		background-color: rgba(255,255,255, 0.6);  
+		    		}
+				}
+			}
+			.image-content {
+
+			}
+		}
+	}
+}
+
+/* html5 .highlights element */
+.highlights {
+
+	.items {
+		@include row();
+
+		.item {
+			@include span-columns(3);
+			@include omega(4n);
+			padding-bottom: ms(2);
+
+			i {
+				text-align: center;
+				display: block;
+			}
+			.title {
+				text-align: center;
+			}
+			.content {
+
+			}
+		}
+	}
+}
+
+/* html5 .contact element */
+#contact {
+	background: #f4f4f4;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+.contact {
+
+	.column {
+		@include span-columns(4);
+	}
+
+	h2 {
+		margin-bottom: 0.5em;
+		font-size: 3em;
+		margin-top: 0em;
+	}
+	.content {
+		@extend %border-box;
+		background: rgba(255,255,255,1);
+		padding: 1em;
+		margin-top: 3em;
+		text-align: left;
+
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+
+	}
+
+	.alert {
+		background: rgb(149, 255, 162);
+		color: #333;
+		padding: 1em;
+		border-radius: 4px;
+	}
+
+	.form {
+		background: #fff;
+		margin-top: 3em;
+		padding: 0.15em 1em 1em;
+		border-radius: 3px;
+	}
+
+	form {
+
+		.form-field {
+			margin: 1em 0;
+		}
+
+		label {
+			display: none;
+		}
+
+		input,
+		textarea {
+			color: #333;
+			background: #eee;
+			border: 1px solid #ddd;
+
+			&:focus {
+
+			}
+		}
+
+		textarea {
+			height: 100px;
+		}
+
+		button {
+			border: 0;
+			background: rgb(80, 162, 254);
+			color: rgb(255,255,255);
+
+			&:hover {
+				background: darken(rgb(80, 162, 254), 10%);
+			}
+		}
+
+		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		    color:    #333;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #333;
+		   opacity:  1;
+		}
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #333;
+		   opacity:  1;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    #333;
+		}
+		:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+		  color:    #333;
+		}
+	}
+
+	.contact-phones {
+		margin-top: 3em;
+
+		ul {
+			list-style: none;
+			padding: 0 1em;
+
+			li {
+				strong {
+
+				}
+			}
+		}
+	}
+
+	.contact-social-media {
+		margin-top: 2em;
+	}
+
+	$circle-size: 70px;
+	a.fa-circle-bg {
+		display: block;
+		height: $circle-size;
+		width: $circle-size;
+		background: rgba(255,255,255,0.9);
+		overflow: hidden;
+		border-radius: $circle-size;
+		color: #333;
+		text-align: center;
+		line-height: $circle-size;
+		margin: 0 auto;
+
+		i {
+			line-height: $circle-size;
+		}
+	}
+}
+
+/* html5 .cards element */
+.cards {
+
+}
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+  $card-margin: 1em;
+  $card-image-hover-opacity: 0.7;
+  $card-image-hover-color: #F8F2B4;
+
+  background-color: $card-background;
+  border: $card-border;
+  border-radius: $base-border-radius;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  flex-basis: 15em;
+  flex-grow: 1;
+  margin: 0 $card-margin $base-spacing $card-margin;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  .card-image {
+    background-color: $card-image-hover-color;
+    height: 150px;
+    max-height: 150px;
+    overflow: hidden;
+
+    img {
+      @include border-top-radius($base-border-radius);
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+  }
+
+  .card-header {
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: $card-image-hover-opacity;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  }
+}
+
+/* html5 .maps element */
+.maps {
+	#map_canvas {
+	  height: 400px;
+	  width: 100%;
+	}
+
+	#map_canvas img {
+	  max-width: none; // to prevent UI control bug
+	}
+
+	#map_canvas .content {
+	  padding: 0 0.5em 1em 0.5em;
+	}
+
+	#map_canvas .firstHeading {
+	  font-size: 1em;
+	  font-weight: bold;
+	  line-height: 1em;
+	  margin: 0;
+	}
+
+	#map_canvas #bodyContent p {
+	  font-size: 1em;
+	  margin: 0;
+	}
+}
+
+/* html5 .expandable element */
+.expander {
+  $base-font-size: 1em !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $base-font-color: $dark-gray !default;
+  $expander-arrow-width: 0.7em;
+  $expander-toggle-size: 1em;
+  $expander-toggle-arrow-size: $expander-toggle-size;
+  $expander-toggle-margin: 1em;
+
+  width: 100%;
+
+  .expander-trigger {
+    border-bottom: 1px solid $light-gray;
+    color: $action-color;
+    cursor: pointer;
+    display: block;
+    font-size: $expander-toggle-size;
+    margin-bottom: $expander-toggle-size;
+    padding-bottom: $expander-toggle-size / 4;
+    text-decoration: none;
+    user-select: none;
+
+    &::before {
+      content: "\25BC";
+      font-size: $expander-arrow-width;
+      margin-right: 0.5em;
+    }
+  }
+
+  .expander-content p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  .expander-hidden {
+    &::before {
+      content: "\25BA";
+      font-size: $expander-arrow-width;
+    }
+  }
+
+  .expander-hidden + .expander-content {
+    display: none;
+  }
+}
+
+/* html5 .acs-calendar element */
+.acs-calendar {
+
+	td {
+		padding: ms(-3) ms(-2);
+	}
+	tbody {
+		tr {
+			height: 15vh;
+			vertical-align: top;
+		}
+	}
+	ul.day-list {
+		list-style: none;
+		padding-left: 0;
+
+		li.event {
+			font-size: 0.9rem;
+			line-height: 1;
+			padding-bottom: 0.5rem;
+			background: #f7f7f7;
+			border: 1px solid #efefef;
+		}
+
+		li.event:nth-of-type(1n+3) {
+			display: none;
+		}
+	}
+	ul.day-list:hover {
+		position: absolute;
+
+		li {
+			display: block;
+		}
+	}
+}
+
+/* html5 .acs-events-module */
+.acs-events-module {
+	@include outer-container;
+
+	.day-listing {
+		@include span-columns(4);
+		@include omega(3n);
+	}
+}

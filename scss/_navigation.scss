@@ -1,0 +1,61 @@
+/* html5 .dropdown element */
+.dropdown {
+
+	a {
+      color: $primary;
+      padding: 0;
+
+      &:hover {
+        background: none;
+      }
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-family: 'Lato', sans-serif;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .description {
+    	display: none;
+
+    	@include media($tablet) {
+	     	@include span-columns(3);
+
+	     	.inner {
+				background: #fff;
+				padding-top: ms(-4);
+				padding-bottom: ms(-4);
+				margin-left: -9999px;
+				padding-left: 9999px;
+				padding-right: ms(0);
+	      	}
+    	}
+    }
+
+    .content {
+      @include span-columns(12);
+
+      @include media($tablet) {
+      	@include span-columns(9);
+      }
+
+      .column {
+
+      	@include media($tablet) {
+	        @include span-columns(4);      		
+      	}
+
+        ul {
+          padding-left: 0;
+          display: block;
+
+          li {
+            
+          }
+        }
+      }
+    }
+}

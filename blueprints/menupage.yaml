@@ -1,0 +1,60 @@
+title: Menu Page
+'@extends':
+    type: default
+    context: blueprints://pages
+        
+form:
+  fields:
+    tabs:
+      fields:
+        
+        content:
+          type: tab
+          title: Content
+          fields:
+            content: 
+              type: ignore
+            uploads: 
+              type: ignore
+            header.dropdown.description:
+              label: Description
+              type: textarea
+              rows: 4
+            header.dropdown.col1:
+              title: Column 1
+              type: section
+              underline: true
+            header.dropdown.col1.content:
+              label: Markdown-flavored Content
+              type: textarea
+              rows: 7
+            header.dropdown.col2:
+              title: Column 2
+              type: section
+              underline: true
+            header.dropdown.col2.content:
+              label: Markdown-flavored Content
+              type: textarea
+              rows: 7
+            header.dropdown.col3:
+              title: Column 3
+              type: section
+              underline: true
+            header.dropdown.col3.content:
+              label: Markdown-flavored Content
+              type: textarea
+              rows: 7
+            header.dropdown.button:
+              type: section
+              title: Callout Button
+              underline: true
+            header.dropdown.button.title:
+              label: Button title
+              type: text
+            header.dropdown.button.link:
+              label: Button link
+              type: text
+
+
+        assets:
+          type: ignore

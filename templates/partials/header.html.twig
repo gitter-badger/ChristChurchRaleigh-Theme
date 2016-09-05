@@ -1,10 +1,28 @@
-<section class="navigation">
+<header class="header">
+
+    <div class="site-logo">
+        <a href="{{ base_url_absolute }}">
+            <img src="{{ url('theme://images/logo.jpg') }}" class="logo" />
+        </a>
+    </div>
+    
+	<h1 class="site-title"><a href="{{ base_url_absolute }}">{{ site.title }}</a></h1>
+
+	<ul class="featured-links">
+		<li><a href="#!">Events</a></li>
+		<li><a href="#!">Sermons</a></li>
+		<li><a href="#!">Online Giving</a></li>
+	</ul>
+
+</header><!--.header-->
+
+{% include 'partials/navigation.html.twig' %}
+
+{#<section class="navigation">
     <div class="nav-container">
         
         <div class="brand">
             <a href="{{ base_url_absolute }}">{{ site.title }}</a>
         </div>
-
-	    {% include 'partials/navigation.html.twig' %}
     </div><!--.nav-container-->
-</section><!--.navigation-->
+</section><!--.navigation-->#}

@@ -1,22 +1,64 @@
-<nav>
+<nav class="main-navigation">
+    
     <div class="nav-mobile">
         <a id="nav-toggle" href="#!"><span></span></a>
     </div>
-    <ul class="nav-menu">
-        {% for page in pages.children.visible %}
-            {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
-            <li class="{{ current_page }}">
-                <a href="{{ page.url }}">{{ page.menu }}</a>
-                {% if page.children.visible.count > 0 %}
-                    <ul class="nav-dropdown">
-                        {% for subpage in page.children.visible %}
-                            <li>
-                                <a href="{{ subpage.url }}">{{ subpage.menu }} </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+
+    <div class="nav-menu">
+        <ul>
+            {% for page in pages.children.visible %}
+                {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                <li class="{{ current_page }}">
+                    <a href="#!" class="{% if page.template == 'menupage' %}dropdown-selector{% endif %} {{ page.slug }}" data-nav-dropdown="{{ page.slug }}">{{ page.menu }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="nav-dropdowns">
+        <ul>
+            {% for page in pages.children.visible %}
+                    {% if page.template == 'menupage' %}
+                        <li class="dropdown {{ page.slug }}" data-nav-dropdown="{{ page.slug }}">
+                            <div class="container">
+                                {% set dropdown = page.header.dropdown %}
+                                <div class="description">
+                                    <div class="inner">
+                                        <h3>{{ page.title }}</h3>
+                                        {{ dropdown.description|markdown }}
+                                    </div>
+                                </div>
+                                <div class="content">
+
+                                    {% if dropdown.col1.content != null %}
+                                        <div class="column">
+                                            {{ dropdown.col1.content|markdown }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if dropdown.col2 != null %}
+                                        <div class="column">
+                                            {{ dropdown.col2.content|markdown }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if dropdown.col3 != null %}
+                                        <div class="column">
+                                            {{ dropdown.col3.content|markdown }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if dropdown.col4.title != null %}
+                                        <div class="column">
+                                            <h3>{{ dropdown.col4.title }}</h3>
+                                            {{ dropdown.col4.content|markdown }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </li>
+                    {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
 </nav>
