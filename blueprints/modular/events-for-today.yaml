@@ -1,0 +1,36 @@
+title: Events for Today
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        options:
+          fields:
+            section:
+              type: section
+              title: Styles
+              underline: true
+              import@:
+                type: partials/styles
+                context: blueprints://pages
+        events:
+          type: tab
+          title: Events
+          fields:
+            header.acs.calendarIDs:
+              type: checkboxes
+              label: Calendar IDs
+              help: Comma separated list of Calendar IDs
+              use: keys
+              data-options@: '\Grav\Plugin\AcsPlugin::getCalendarIDs'
+            header.acs.locationIDs:
+              type: checkboxes
+              label: Location IDs
+              help: Comma separated list of Location IDs
+              use: keys
+              data-options@: '\Grav\Plugin\AcsPlugin::getLocationIDs'
+        assets:
+          type: ignore

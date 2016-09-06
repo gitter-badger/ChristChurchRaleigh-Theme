@@ -437,3 +437,74 @@
 		@include omega(3n);
 	}
 }
+
+/* html5 .events-for-tody */
+.events-for-today {
+	@include pad(1.5rem 1.5rem 2.5rem );
+
+	.time {
+		
+		time {
+			display: none;
+		}
+
+		@include media($desktop) {
+			@include span-columns(6);
+
+			time {
+				font-size: ms(4);
+				line-height: 1;
+				display: block;
+			}					
+		}
+	}
+
+	.events {
+
+		@include media($desktop) {
+			@include span-columns(6);
+		}
+
+		ul {
+			list-style: none;
+			padding: 1rem;
+			background: #f7f7f7;
+			overflow: hidden;
+
+			li {
+				display: block;
+				border-bottom: 1px solid #fff;
+				line-height: 3;
+				overflow: hidden;
+
+				.time {
+					@include span-columns(3);
+					
+				}
+				.title {
+					@include span-columns(9);
+
+				}
+			}
+			li:last-child() {
+				border-bottom: 0;
+			}
+		}
+	}
+
+	.events-btn {
+		font-size: ms(1);
+		line-height: 1.618;
+		display: inline-block;
+		border: 5px solid $primary;
+		border-radius: 5px;
+		color: $primary;
+		padding: 0 ms(1);
+
+		&:hover {
+			border-color: tint($primary, 15);
+			color: tint($primary, 15);
+		}
+	}
+
+}

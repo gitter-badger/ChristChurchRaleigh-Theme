@@ -918,12 +918,12 @@ form {
     background: #5dda92; }
 
 .btn-primary {
-  background: #3498db; }
+  background: #003D6B; }
   .btn-primary:hover {
-    background: #57aae1;
+    background: #005494;
     transition: all 0.15s ease; }
   .btn-primary:active {
-    background: #68b2e4; }
+    background: #0060a8; }
 
 .btn-danger {
   background: #e74c3c; }
@@ -1210,6 +1210,11 @@ table {
     display: block; }
 
 /* html5 .showcase element */
+.sy-pager {
+  margin-top: -2rem !important;
+  position: absolute;
+  z-index: 300; }
+
 .showcase article .image-content {
   height: 78vh;
   background-size: cover; }
@@ -1222,6 +1227,7 @@ table {
   justify-content: center;
   align-items: center; }
   .showcase article .slide-content-outer .slide-content-inner {
+    background-color: rgba(255, 255, 255, 0.75);
     max-width: 70rem;
     margin-left: auto;
     margin-right: auto;
@@ -1233,7 +1239,7 @@ table {
     @media screen and (min-width: 1124px) {
       .showcase article .slide-content-outer .slide-content-inner {
         width: 62vw;
-        padding: 0 4.23607em; } }
+        padding: 0 2.61803em; } }
     .showcase article .slide-content-outer .slide-content-inner .slide-title {
       color: #000000;
       font-size: 1.61803em;
@@ -1667,6 +1673,69 @@ h1, h2, h3, h4, h5, h6 {
       margin-right: 0; }
     .acs-events-module .day-listing:nth-child(3n+1) {
       clear: left; }
+
+/* html5 .events-for-tody */
+.events-for-today {
+  padding: 1.5rem 1.5rem 2.5rem; }
+  .events-for-today .time time {
+    display: none; }
+  @media screen and (min-width: 1124px) {
+    .events-for-today .time {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      .events-for-today .time:last-child {
+        margin-right: 0; }
+      .events-for-today .time time {
+        font-size: 6.8541em;
+        line-height: 1;
+        display: block; } }
+  @media screen and (min-width: 1124px) {
+    .events-for-today .events {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      .events-for-today .events:last-child {
+        margin-right: 0; } }
+  .events-for-today .events ul {
+    list-style: none;
+    padding: 1rem;
+    background: #f7f7f7;
+    overflow: hidden; }
+    .events-for-today .events ul li {
+      display: block;
+      border-bottom: 1px solid #fff;
+      line-height: 3;
+      overflow: hidden; }
+      .events-for-today .events ul li .time {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 23.23176%; }
+        .events-for-today .events ul li .time:last-child {
+          margin-right: 0; }
+      .events-for-today .events ul li .title {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 74.41059%; }
+        .events-for-today .events ul li .title:last-child {
+          margin-right: 0; }
+    .events-for-today .events ul li:last-child {
+      border-bottom: 0; }
+  .events-for-today .events-btn {
+    font-size: 1.61803em;
+    line-height: 1.618;
+    display: inline-block;
+    border: 5px solid #003D6B;
+    border-radius: 5px;
+    color: #003D6B;
+    padding: 0 1.61803em; }
+    .events-for-today .events-btn:hover {
+      border-color: #265a81;
+      color: #265a81; }
 
 /* html5 .colophon element */
 section.colophon {
