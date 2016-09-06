@@ -1,0 +1,35 @@
+<section class="events-for-today" style="background-image: url({{ image.cropZoom(960,380).url() }}); ">
+	<div class="container">
+
+		<div class="time">
+			<h3>{{ page.title }}</h3>
+			<time>{{ "now"|date('g:ia') }}</time>
+			{{ page.content }}
+		</div>
+
+		<div class="events">
+			{% set params = page.header.acs %}
+			{% set today = datetools.today|date('m/d/Y') %}
+			{% set params = params|merge({ 'start_date': today, 'end_date': today }) %}
+			{% set events = acs.getFSListOfEvents(params) %}
+
+			<ul>
+				{% for event in events %}
+					<li>
+						<span class="time">
+							{% set startDate = event.StartDate|date('g:ia') %}
+							{% if startDate != '12:00am' %}
+								{{ startDate }}
+							{% else %}
+								All Day
+							{% endif %}
+						</span>
+						<span class="title"><a href="#!" data-event-id="{{ event.EventId }}">{{ event.EventName }}</a></span>
+					</li>
+				{% endfor %}
+			</ul>
+
+			<p><a href="#!" class="events-btn">All Events</a></p>
+		</div>
+	</div>
+</section>

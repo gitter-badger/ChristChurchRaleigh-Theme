@@ -2,6 +2,11 @@ $mobile-slider-height: 78vh;
 $tablet-slider-height: 62vh;
 
 /* html5 .showcase element */
+.sy-pager {
+	margin-top: -2rem !important;
+	position: absolute;
+	z-index: 300;
+}
 .showcase {
 
 	article {
@@ -20,12 +25,14 @@ $tablet-slider-height: 62vh;
 			align-items: center;
 
 			.slide-content-inner {
+				background-color: rgba(255,255,255,0.75);
+
 				@include outer-container();
 				padding: 0 ms(1);
 
 				@include media($desktop) {
 					width: 62vw;
-					padding: 0 ms(3);
+					padding: 0 ms(2);
 				}
 
 				.slide-title {

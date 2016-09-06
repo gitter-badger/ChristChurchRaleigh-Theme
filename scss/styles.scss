@@ -23,7 +23,7 @@ $nav-background: $primary;
 // default buttons
 $buttons: 	(default #cccccc),
 			(secondary #2ecc71),
-			(primary #3498db),
+			(primary $primary),
 			(danger #e74c3c);
 
 $btn-color: #fff;

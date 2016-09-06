@@ -1,5 +1,8 @@
 form:
   fields:
+    header.styles.background:
+      label: Background Image
+      type: pagemediaselect
     header.styles.breakout:
       label: Push to viewport edge?
       help: Break out of the container and push the element to viewport edge. This automatically assumes the element is a single row in the grid.
