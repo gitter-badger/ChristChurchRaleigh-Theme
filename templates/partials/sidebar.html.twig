@@ -1,5 +1,14 @@
 <aside class="sidebar" role="contentinfo">
 	{% block sidebar %}
-		<img src="http://placehold.it/300x160/D8006F/FFF/?text=sidebar" />	
+
 	{% endblock %}
+
+	{% if header.sidebar.events == true %}
+		<h3>Upcoming Events</h3>
+	{% endif %}
+
+	{% if header.sidebar.team == true %}
+		<h3>Ministry Team</h3>
+	{% endif %}
+
 </aside>

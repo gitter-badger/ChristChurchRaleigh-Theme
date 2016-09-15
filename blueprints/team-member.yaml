@@ -1,0 +1,26 @@
+title: Sermon
+'@extends':
+    type: default
+    context: blueprints://pages
+        
+form:
+  fields:
+    tabs:
+      fields:
+        
+        team:
+          type: tab
+          title: Team Member
+          fields:
+            header.team-member.title:
+              label: Title
+              type: text
+            header.team-member.email:
+              label: Email
+              type: text
+            header.team-member.phone:
+              label: Phone Ext
+              type: text
+
+        assets:
+          type: ignore

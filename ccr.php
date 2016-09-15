@@ -159,4 +159,30 @@ class Ccr extends Theme
 		return $calendarsArray;
 	}
 
+	static public function getEventTaxonomyIDs()
+	{
+		$grav = \Grav\Common\Grav::instance();
+		$taxonomies = $grav['grav']['taxonomy']->taxonomy();
+
+		$events = [];
+		foreach( $taxonomies['event'] as $key => $team) {
+			$events[$key] = ucwords($key);
+		}
+
+		return $events;
+	}
+
+	static public function getTeamTaxonomyIDs()
+	{
+		$grav = \Grav\Common\Grav::instance();
+		$taxonomies = $grav['grav']['taxonomy']->taxonomy();
+
+		$teams = [];
+		foreach( $taxonomies['team'] as $key => $team) {
+			$teams[$key] = ucwords($key);
+		}
+
+		return $teams;
+	}
+
 }

@@ -16,7 +16,45 @@ form:
               type: textarea
               label: Content footer
               rows: 6
-
+        
+        options: 
+          fields:
+            section:
+              type: section
+              title: Sidebar
+              underline: true
+            header.sidebar.events:
+              label: Enable Page Specific Events?
+              type: toggle
+              highlight: 1
+              default: 0
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+            header.sidebar.events.taxonomy:
+              type: checkboxes
+              label: Event Taxonomy
+              help: Comma separated list of Calendar IDs
+              use: keys
+              data-options@: '\Grav\Theme\Ccr::getEventsTaxonomyIDs'
+            header.sidebar.team:
+              label: Enable Page Specific Ministry Team?
+              type: toggle
+              highlight: 1
+              default: 0
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+            header.sidebar.team.taxonomy:
+              type: checkboxes
+              label: Team Taxonomy
+              help: Comma separated list of Calendar IDs
+              use: keys
+              data-options@: '\Grav\Theme\Ccr::getTeamTaxonomyIDs'
 
         expanders:
           type: tab
