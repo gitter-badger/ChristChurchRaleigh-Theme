@@ -1816,6 +1816,10 @@ footer.copyright {
       width: 48.82117%; }
       footer.copyright .copyright:last-child {
         margin-right: 0; } }
+  footer.copyright .copyright a {
+    color: #99b1c4; }
+    footer.copyright .copyright a:hover {
+      color: #fff; }
   @media screen and (min-width: 768px) {
     footer.copyright .social {
       float: left;
@@ -1991,6 +1995,32 @@ main {
         display: block; }
       .team-members li .team-member-info .team-member-position {
         display: block; }
+
+/* html5 section.blog element */
+.blog {
+  float: left;
+  display: block;
+  margin-right: 10.1484%;
+  width: 63.28387%; }
+  .blog:last-child {
+    margin-right: 0; }
+
+/* html5 article.blog-item element */
+.blog-item {
+  float: left;
+  display: block;
+  margin-right: 10.1484%;
+  width: 63.28387%; }
+  .blog-item:last-child {
+    margin-right: 0; }
+
+/* html5 .meta-information */
+.meta-information .p-tag, .meta-information .p-category {
+  background: #efefef;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  color: #000000;
+  border-radius: 3px; }
 
 /* html5 .crafted-by-kh branding elements for the developer */
 .crafted-by-kh {

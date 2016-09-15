@@ -1,0 +1,39 @@
+{% extends 'partials/base.html.twig' %}
+
+
+{% block content %}
+
+	<div class="container">
+
+		<article class="blog-item">
+			<h1>{{ page.title }}</h1>
+			
+			<p class="article-author">Authored by <strong>{{ page.header.blog.author }}</strong></p>
+			
+			<div class="meta-information">
+				{% if page.taxonomy.category %}
+			        <span class="categories">
+			            {% for category in page.taxonomy.category %}
+			            <a href="{{ blog.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ category }}" class="p-category">{{ category }}</a>
+			            {% endfor %}
+			        </span>
+			    {% endif %}
+
+				{% if page.taxonomy.tag %}
+			        <span class="tags">
+			            {% for tag in page.taxonomy.tag %}
+			            <a href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}" class="p-tag">{{ tag }}</a>
+			            {% endfor %}
+			        </span>
+			    {% endif %}
+			</div>
+
+			{{ page.content }}
+		</article>
+
+		{# include sidebar #}
+		{% include 'partials/sidebar.html.twig' with {'blog':page} %}
+
+	</div><!--.container-->
+
+{% endblock %}

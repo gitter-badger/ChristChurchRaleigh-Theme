@@ -1,7 +1,10 @@
 <aside class="sidebar" role="contentinfo">
-	{% block sidebar %}
 
-	{% endblock %}
+	{% block sidebar %}{% endblock %}
+
+	{% if page.template == 'blog' or page.template == 'blog-item' %}
+		<h3>Archive</h3>
+	{% endif %}
 
 	{% if header.sidebar.events == true %}
 		<h3>Upcoming Events</h3>

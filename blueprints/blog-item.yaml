@@ -1,0 +1,21 @@
+title: Blog Item
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+
+        options:
+          fields:
+            section:
+              type: section
+              title: Article Information
+              underline: true
+            header.blog.author:
+              type: text
+              label: Article Author
+              placeholder: George Washington
+            

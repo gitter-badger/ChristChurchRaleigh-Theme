@@ -38,6 +38,9 @@ form:
     social.soundcloud:
       type: text
       label: SoundCloud URL
+    social.pinterest:
+      type: text
+      label: Pinterest URL
     acs.section:
       type: section
       title: ACS

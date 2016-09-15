@@ -127,6 +127,28 @@ main {
 	}
 }
 
+/* html5 section.blog element */
+.blog {
+	@include span-columns(2 of 3);
+}
+
+/* html5 article.blog-item element */
+.blog-item {
+	@include span-columns(2 of 3);
+}
+
+/* html5 .meta-information */
+.meta-information {
+
+	.p-tag, .p-category {
+		background: #efefef;
+		display: inline-block;
+		padding: 0.25rem 0.5rem;
+		color: $text;
+		border-radius: 3px;
+	}
+}
+
 /* html5 .crafted-by-kh branding elements for the developer */
 .crafted-by-kh {
 	padding: 1rem;

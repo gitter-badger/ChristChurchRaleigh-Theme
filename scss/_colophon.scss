@@ -74,6 +74,14 @@ footer.copyright {
 		@include media($tablet) {
 			@include span-columns(6);			
 		}
+
+		a {
+			color: tint($primary, 60);
+
+			&:hover {
+				color: #fff;
+			}
+		}
 	}
 	.social {
 		@include media($tablet) {
