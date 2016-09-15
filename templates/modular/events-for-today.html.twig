@@ -11,6 +11,9 @@
 			{% set params = page.header.acs %}
 			{% set today = datetools.today|date('m/d/Y') %}
 			{% set params = params|merge({ 'start_date': today, 'end_date': today }) %}
+
+			{{ dump(acs) }}
+
 			{% set events = acs.getFSListOfEvents(params) %}
 
 			<ul>

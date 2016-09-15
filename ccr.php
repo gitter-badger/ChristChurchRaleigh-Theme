@@ -36,12 +36,12 @@ class Ccr extends Theme
 		}
 
 		// get the acs site number
-		$site_number = $this->config->get('plugins.acs.site_number');
+		$site_number = $this->config->get('theme.acs.site_number');
 
 		// build an acs api request header
 		$request_header = array(
-			'username' => $this->config->get('plugins.acs.username'),
-			'password' => $this->config->get('plugins.acs.password'),
+			'username' => $this->config->get('theme.acs.username'),
+			'password' => $this->config->get('theme.acs.password'),
 		);
 
 		// instantiate the acs api to be used in twig
@@ -54,6 +54,8 @@ class Ccr extends Theme
 
 	public function onTwigSiteVariables()
 	{
+		$twig = $this->grav['twig'];
+		
 		$this->grav['assets']
 			->addCSS('theme://css/slippry.css,', 15)
 			->addCss('theme://css/compiled/styles.css', 15)
@@ -65,6 +67,12 @@ class Ccr extends Theme
 			->addJs('theme://js/slippry.min.js')
 			->addJs('theme://js/script.js')
 			->addJs('theme://js/ui.js');
+
+		// paramless calls
+		$acs = $this->acs_api;
+
+		// paramed called
+		$twig->twig_vars['acs'] = $acs;
 	}
 
 	public function fetchSoundcloudAudio()
@@ -84,4 +92,59 @@ class Ccr extends Theme
 		// print out the User ID
 		echo $user->id;
 	}
+
+	/**
+	 * Get Location IDs for use in lists
+	 */
+	static public function getLocationIDs()
+	{
+		// get grav so we can get plugin config
+		$grav = Grav::instance();
+		$config = $grav['config']['plugins']['acs'];
+		// get the acs site number
+		$site_number = $config['site_number'];
+		// build an acs api request header
+		$request_header = array(
+			'username' => $config['username'],
+			'password' => $config['password'],
+		);
+		// build an acs api request
+		$acs = new Acs( $site_number, $request_header);
+		$locations = json_decode($acs->getFSListOfLocations());
+		// build the new locations array to use in the blueprint
+		$locationsArray = [];
+		foreach($locations as $location) {
+			$locationsArray[$location->LocationId] = $location->LocationName;
+		}
+		// return locations
+		return $locationsArray;
+	}
+
+	/**
+	 * Get Calendar IDs for use in lists
+	 */
+	static public function getCalendarIDs()
+	{
+		// get grav so we can get plugin config
+		$grav = Grav::instance();
+		$config = $grav['config']['plugins']['acs'];
+		// get the acs site number
+		$site_number = $config['site_number'];
+		// build an acs api request header
+		$request_header = array(
+			'username' => $config['username'],
+			'password' => $config['password'],
+		);
+		// build an acs api request
+		$acs = new Acs( $site_number, $request_header);
+		$calendars = json_decode($acs->getFSListOfCalendars());
+		// build the new calendar array to use in the blueprint
+		$calendarsArray = [];
+		foreach($calendars as $calendar) {
+			$calendarsArray[$calendar->CalendarId] = $calendar->Name;
+		}
+		// return calendar
+		return $calendarsArray;
+	}
+
 }
