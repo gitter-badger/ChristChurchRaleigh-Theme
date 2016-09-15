@@ -1,0 +1,62 @@
+title: Team Member
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+             
+        options:
+          fields:
+            section:
+              type: section
+              title: Styles
+              underline: true
+              import@:
+                type: partials/styles
+                context: blueprints://pages
+
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/contact
+                      @data-options: '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/contact
+                  @data-options: '\Grav\Common\Page\Pages::modularTypes'
+
+        team-member:
+          type: tab
+          title: Team Member
+          fields:
+            header.team-member.phone:
+              type: text
+              label: Phone
+              placeholder_key: Phone Type
+              placeholder_value: (123) 456-7890
+            header.team-member.email:
+              type: array
+              label: Emails
+              placeholder_key: Email Type
+              placeholder_value: email@example.com
+            header.team-member.address:
+              type: textarea
+              label: address
+              validate:
+                type: textarea
+            header.team-member.social:
+              type: array
+              label: Social Media
+              placeholder_key: facebook
+              placeholder_value: http://facebook.com
+
+        assets:
+          type: ignore

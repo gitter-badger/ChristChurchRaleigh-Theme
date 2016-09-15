@@ -10,10 +10,17 @@
 
 namespace Grav\Theme;
 
+require_once __DIR__.'/classes/acs.php';
+
 use Grav\Common\Theme;
 
 class Ccr extends Theme
 {
+	/**
+	 * ACS API
+	 */
+	protected $acs_api;
+
 	public static function getSubscribedEvents()
 	{
 		return [
@@ -27,6 +34,18 @@ class Ccr extends Theme
 			$this->active = false;
 			return;
 		}
+
+		// get the acs site number
+		$site_number = $this->config->get('plugins.acs.site_number');
+
+		// build an acs api request header
+		$request_header = array(
+			'username' => $this->config->get('plugins.acs.username'),
+			'password' => $this->config->get('plugins.acs.password'),
+		);
+
+		// instantiate the acs api to be used in twig
+		$this->acs_api = new Acs( $site_number, $request_header );
 
 		$this->enable([
 			'onTwigSiteVariables' => ['onTwigSiteVariables', 0]

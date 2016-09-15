@@ -19,70 +19,39 @@ license: MIT
 form:
   validation: loose
   fields:
-    theme.options:
-      type: section
-      title: Theme Options
-      underline: true
-    dropdown.enabled:
-        type: toggle
-        label: Dropdown in navbar
-        highlight: 1
-        default: 1
-        options:
-          1: PLUGIN_ADMIN.ENABLED
-          0: PLUGIN_ADMIN.DISABLED
-        validate:
-          type: bool
-    colors.section:
-      type: section
-      title: Branding
-      underline: true
-    colors.primary:
-      type: text
-      size: large
-      label: Primary color
-      placeholder: "#003d6b"
-      default: "#003d6b"
-    colors.accent1:
-      type: text
-      size: large
-      label: Accent Color 1
-      placeholder: "#607c8c"
-      default: "#607c8c"
-    colors.accent2:
-      type: text
-      size: large
-      label: Accent Color 2
-      placeholder: "#7a2638"
-      default: "#7a2638"
-    colors.text:
-      type: text
-      size: large
-      label: Text Color
-      placeholder: "#000000"
-      default: "#000000"
-    social.media:
+    social.section:
       type: section
       title: Social Media
       underline: true
     social.facebook:
       type: text
-      size: large
       label: Facebook URL
     social.twitter:
       type: text
-      size: large
       label: Twitter URL
     social.instagram:
       type: text
-      size: large
       label: Instagram URL
     social.flickr:
       type: text
-      size: large
       label: Flickr URL
     social.soundcloud:
       type: text
-      size: large
       label: SoundCloud URL
+    acs.section:
+      type: section
+      title: ACS
+      underline: true
+    acs.username:
+      type: text
+      label: Username
+      default: ""
+    acs.password:
+      type: text
+      label: Password
+      default: ""
+    acs.site_number:
+      type: text
+      label: Site Number
+      default: 91659
 
