@@ -1959,6 +1959,39 @@ main {
   .sidebar:last-child {
     margin-right: 0; }
 
+/* html5 ul.team-members element */
+.team-members {
+  list-style: none;
+  padding-left: 0; }
+  .team-members li {
+    display: block;
+    padding-bottom: 1.618rem; }
+    .team-members li::after {
+      clear: both;
+      content: "";
+      display: block; }
+    .team-members li .team-member-image {
+      float: left;
+      display: block;
+      margin-right: 10.1484%;
+      width: 26.56773%; }
+      .team-members li .team-member-image:last-child {
+        margin-right: 0; }
+      .team-members li .team-member-image img {
+        border-radius: 400px; }
+    .team-members li .team-member-info {
+      float: left;
+      display: block;
+      margin-right: 10.1484%;
+      width: 63.28387%; }
+      .team-members li .team-member-info:last-child {
+        margin-right: 0; }
+      .team-members li .team-member-info .team-member-title {
+        font-weight: bold;
+        display: block; }
+      .team-members li .team-member-info .team-member-position {
+        display: block; }
+
 /* html5 .crafted-by-kh branding elements for the developer */
 .crafted-by-kh {
   padding: 1rem;

@@ -33,13 +33,11 @@ form:
                 0: Disabled
               validate:
                 type: bool
-            header.sidebar.events.taxonomy:
-              type: checkboxes
+            header.sidebar.events_taxonomy:
               label: Event Taxonomy
-              help: Comma separated list of Calendar IDs
-              use: keys
-              data-options@: '\Grav\Theme\Ccr::getEventsTaxonomyIDs'
-            header.sidebar.team:
+              type: text
+              placeholder: kids, youth, adults
+            header.sidebar.teams:
               label: Enable Page Specific Ministry Team?
               type: toggle
               highlight: 1
@@ -49,12 +47,10 @@ form:
                 0: Disabled
               validate:
                 type: bool
-            header.sidebar.team.taxonomy:
-              type: checkboxes
+            header.sidebar.teams_taxonomy:
               label: Team Taxonomy
-              help: Comma separated list of Calendar IDs
-              use: keys
-              data-options@: '\Grav\Theme\Ccr::getTeamTaxonomyIDs'
+              type: text
+              placeholder: kids, youth, adults
 
         expanders:
           type: tab

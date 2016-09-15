@@ -7,8 +7,29 @@
 		<h3>Upcoming Events</h3>
 	{% endif %}
 
-	{% if header.sidebar.team == true %}
+	{% if header.sidebar.teams == true %}
 		<h3>Ministry Team</h3>
+		{% set team_members = page.collection({
+	        'items':{
+	            '@taxonomy.team': header.sidebar.teams_taxonomy
+	        }
+	    }) %}
+		<ul class="team-members">
+		{% for team_member in team_members %}
+			<li>
+				{% set image = team_member.media.images|first %}
+				{% if image != null %}
+				<div class="team-member-image">
+					{{ image.cropZoom(400,400).html }}
+				</div>
+				{% endif %}
+				<div class="team-member-info">
+					<span class="team-member-title">{{ team_member.title }}</span>
+					<span class="team-member-position">{{ team_member.header.team_member.title }}</span>
+				</div>				
+			</li>
+		{% endfor %}
+		</ul>
 	{% endif %}
 
 </aside>

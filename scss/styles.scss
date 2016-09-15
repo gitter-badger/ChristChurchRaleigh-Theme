@@ -96,6 +96,37 @@ main {
 	@include span-columns(1 of 3);
 }
 
+/* html5 ul.team-members element */
+.team-members {
+
+	list-style: none;
+	padding-left: 0;
+
+	li {
+		@include row();
+		padding-bottom: 1.618rem;
+
+		.team-member-image {
+			@include span-columns(1 of 3);
+			img {
+				border-radius: 400px;
+			}
+		}
+
+		.team-member-info {
+			@include span-columns(2 of 3);
+
+			.team-member-title {
+				font-weight: bold;
+				display: block;
+			}
+			.team-member-position {
+				display: block;
+			}
+		}
+	}
+}
+
 /* html5 .crafted-by-kh branding elements for the developer */
 .crafted-by-kh {
 	padding: 1rem;

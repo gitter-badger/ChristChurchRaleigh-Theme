@@ -12,13 +12,13 @@ form:
           type: tab
           title: Team Member
           fields:
-            header.team-member.title:
-              label: Title
+            header.team_member.title:
+              label: Position
               type: text
-            header.team-member.email:
+            header.team_member.email:
               label: Email
               type: text
-            header.team-member.phone:
+            header.team_member.phone:
               label: Phone Ext
               type: text
 
