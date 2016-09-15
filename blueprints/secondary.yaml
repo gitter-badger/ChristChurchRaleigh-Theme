@@ -1,0 +1,41 @@
+title: Secondary
+'@extends':
+    type: default
+    context: blueprints://pages
+        
+form:
+  fields:
+    tabs:
+      fields:
+        
+        content:
+          type: tab
+          title: Content
+          fields:
+            header.content.footer:
+              type: textarea
+              label: Content footer
+              rows: 6
+
+
+        expanders:
+          type: tab
+          title: Expanders
+          fields:
+            header.expanders:
+              name: expanders
+              type: list
+              size: long
+              style: vertical
+
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                .content:
+                  type: textarea
+                  label: Content
+                  size: large
+
+        assets:
+          type: ignore

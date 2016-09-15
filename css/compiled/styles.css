@@ -1938,6 +1938,27 @@ footer.copyright {
     margin-right: 0; }
 
 /* html5 <main> element */
+main {
+  padding-bottom: 2rem; }
+
+/* html5 article.main element */
+.main {
+  float: left;
+  display: block;
+  margin-right: 10.1484%;
+  width: 63.28387%; }
+  .main:last-child {
+    margin-right: 0; }
+
+/* html5 .sidebar element */
+.sidebar {
+  float: left;
+  display: block;
+  margin-right: 10.1484%;
+  width: 26.56773%; }
+  .sidebar:last-child {
+    margin-right: 0; }
+
 /* html5 .crafted-by-kh branding elements for the developer */
 .crafted-by-kh {
   padding: 1rem;

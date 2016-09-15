@@ -13,6 +13,7 @@ namespace Grav\Theme;
 require_once __DIR__.'/classes/acs.php';
 
 use Grav\Common\Theme;
+use RocketTheme\Toolbox\Event\Event;
 
 class Ccr extends Theme
 {
@@ -48,14 +49,15 @@ class Ccr extends Theme
 		$this->acs_api = new Acs( $site_number, $request_header );
 
 		$this->enable([
-			'onTwigSiteVariables' => ['onTwigSiteVariables', 0]
+			'onTwigSiteVariables' => ['onTwigSiteVariables', 0],
+			'onPageContentRaw' => ['onPageContentRaw', 0],
 		]);
 	}
 
 	public function onTwigSiteVariables()
 	{
 		$twig = $this->grav['twig'];
-		
+
 		$this->grav['assets']
 			->addCSS('theme://css/slippry.css,', 15)
 			->addCss('theme://css/compiled/styles.css', 15)
@@ -73,6 +75,16 @@ class Ccr extends Theme
 
 		// paramed called
 		$twig->twig_vars['acs'] = $acs;
+	}
+
+	public function onPageContentRaw(Event $e)
+	{
+		$output = '';
+        $content = $e['page']->getRawContent();
+
+        //$expanders = preg_split(":(</?expanders>):", $content, 0, PREG_SPLIT_NO_EMPTY|PREG_SPLIT_DELIM_CAPTURE);
+
+        //dump($expanders);
 	}
 
 	public function fetchSoundcloudAudio()

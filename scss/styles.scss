@@ -83,7 +83,17 @@ $btn-color: #fff;
 
 /* html5 <main> element */
 main {
+	padding-bottom: 2rem;
+}
 
+/* html5 article.main element */
+.main {
+	@include span-columns(2 of 3);
+}
+
+/* html5 .sidebar element */
+.sidebar {
+	@include span-columns(1 of 3);
 }
 
 /* html5 .crafted-by-kh branding elements for the developer */
