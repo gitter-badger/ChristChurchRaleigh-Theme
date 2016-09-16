@@ -14,8 +14,13 @@ form:
               type: section
               title: Article Information
               underline: true
-            header.blog.author:
+            header.blog.byline:
               type: text
-              label: Article Author
+              label: Authored By
               placeholder: George Washington
-            
+            header.blog.staff-member:
+              type: select
+              label: Staff Member Contact
+              placeholder: George Washington
+              use: keys
+              data-options@: '\Grav\Theme\Ccr::getStaffMembers'

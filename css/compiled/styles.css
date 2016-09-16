@@ -933,35 +933,35 @@ form {
   .btn-danger:active {
     background: #ee7e72; }
 
-table {
+.table {
   width: 100%;
   margin: 1.61803em 0;
   border-collapse: collapse;
   border-spacing: 0;
   border: 1px solid #efefef; }
-  table td, table th {
+  .table td, .table th {
     border-top: 1px solid #efefef;
     padding: 0.38197em 1em; }
-  table th {
+  .table th {
     background: #353535;
     color: #ffffff;
     font-weight: normal;
     text-align: left; }
-  table tbody tr:nth-child(even) td {
+  .table tbody tr:nth-child(even) td {
     background-color: #f7f7f7; }
   @media screen and (max-width: 600px) {
-    table thead, table tfoot {
+    .table thead, .table tfoot {
       display: none; }
-    table tbody tr:nth-of-type(2n) {
+    .table tbody tr:nth-of-type(2n) {
       background-color: inherit; }
-    table tbody tr td:first-child {
+    .table tbody tr td:first-child {
       background: #353535;
       color: #ffffff; }
-    table tbody td {
+    .table tbody td {
       display: block;
       width: 100%;
       text-align: left; }
-    table tbody td:before {
+    .table tbody td:before {
       content: attr(data-th);
       display: block;
       text-align: left; } }
@@ -2021,6 +2021,52 @@ main {
   padding: 0.25rem 0.5rem;
   color: #000000;
   border-radius: 3px; }
+
+/* html5 .calendar element */
+.calendar {
+  width: 100%; }
+  .calendar thead tr.controls {
+    font-size: 1rem;
+    font-weight: normal;
+    height: 3rem; }
+    .calendar thead tr.controls a {
+      color: #000000; }
+  .calendar thead tr.headings {
+    background: #003D6B;
+    color: #fff;
+    font-weight: normal !important;
+    font-family: Lato, sans-serif; }
+  .calendar tbody tr {
+    height: 13vh;
+    border-bottom: 1px solid #efefef;
+    border-right: 1px solid #efefef; }
+    .calendar tbody tr td {
+      border-left: 1px solid #efefef;
+      padding: 0 1% 1%; }
+      .calendar tbody tr td .calendar-day {
+        display: inline-block;
+        background: #efefef;
+        width: 30px;
+        text-align: center;
+        font-size: 85%;
+        margin-left: -9%; }
+
+/* html5 .events-listing */
+.events-listing {
+  float: left;
+  display: block;
+  margin-right: 10.1484%;
+  width: 63.28387%; }
+  .events-listing:last-child {
+    margin-right: 0; }
+
+.events-sidebar {
+  float: left;
+  display: block;
+  margin-right: 10.1484%;
+  width: 26.56773%; }
+  .events-sidebar:last-child {
+    margin-right: 0; }
 
 /* html5 .crafted-by-kh branding elements for the developer */
 .crafted-by-kh {

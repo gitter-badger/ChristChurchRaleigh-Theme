@@ -5,30 +5,42 @@
 
 	<div class="container">
 
+
+
 		<article class="blog-item">
-			<h1>{{ page.title }}</h1>
-			
-			<p class="article-author">Authored by <strong>{{ page.header.blog.author }}</strong></p>
-			
-			<div class="meta-information">
-				{% if page.taxonomy.category %}
-			        <span class="categories">
-			            {% for category in page.taxonomy.category %}
-			            <a href="{{ blog.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ category }}" class="p-category">{{ category }}</a>
-			            {% endfor %}
-			        </span>
-			    {% endif %}
 
-				{% if page.taxonomy.tag %}
-			        <span class="tags">
-			            {% for tag in page.taxonomy.tag %}
-			            <a href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}" class="p-tag">{{ tag }}</a>
-			            {% endfor %}
-			        </span>
-			    {% endif %}
-			</div>
+			<header>
 
-			{{ page.content }}
+				<h1>{{ page.title }}</h1>			
+
+				<p>Authored by <strong>{{ page.header.blog.author }}</strong> on <time datetime="{{ page.date|date("c") }}">{{ page.date|date("l, F d, Y") }}</time></p>
+
+				<div class="meta-information">
+					{% if page.taxonomy.category %}
+				        <span class="categories">
+				            {% for category in page.taxonomy.category %}
+				            <a href="{{ blog.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ category }}" class="p-category">{{ category }}</a>
+				            {% endfor %}
+				        </span>
+				    {% endif %}
+
+					{% if page.taxonomy.tag %}
+				        <span class="tags">
+				            {% for tag in page.taxonomy.tag %}
+				            <a href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}" class="p-tag">{{ tag }}</a>
+				            {% endfor %}
+				        </span>
+				    {% endif %}
+				</div>
+			</header>
+
+			<section>
+				{{ page.content }}
+			</section>
+
+			<footer>
+
+			</footer>
 		</article>
 
 		{# include sidebar #}

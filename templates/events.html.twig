@@ -1,50 +1,39 @@
-{% extends 'partials/base.html.twig' %}
+{% embed 'partials/base.html.twig' %}
 
 {% set collection = page.collection() %}
 
 {% block content %}
 
-	{# page header image #}
-	{% set header_image = page.media.images|first %}
-	{% if header_image != null %}
-	<header class="masthead">
-		{{ header_image.cropZoom(1920,320).html }}
-	</header>
-	{% endif %}
-
 	<div class="container">
-		<article class="event">
-			<header>
-				{% set event_image = page.header.event.image %}
-				{% if event_image != null %}
-				<header class="masthead">
-					{{ image.cropZoom(1920,320).html }}
-				</header>
-				{% endif %}
-				<h1>{{ page.title }}</h1>
-			</header>
-			<section>
-				{{ page.content }}
 
-				{% if page.header.expanders != null %}
-					{% for expander in page.header.expanders %}
-						<div class="expander">
-							<a href="javascript:void(0)" class="expander-trigger expander-hidden">{{ expander.title }}</a>
-							<div class="expander-content">
-								{{ expander.content|markdown }}
-							</div>
-						</div>
-					{% endfor %}
-				{% endif %}
-			</section>
-			<footer>
-			{{ page.header.content.footer|markdown }}
-			</footer>
-		</article>
+		<div class="events-listing">
 
-		{# include sidebar #}
-		{% include 'partials/sidebar.html.twig' with { 'page': page } %}
+			{% if config.plugins.breadcrumbs.enabled %}
+				{% include 'partials/breadcrumbs.html.twig' %}
+			{% endif %}
+
+			<div class="content-wrapper blog-content-list grid pure-g">
+				<div id="listing" class="block pure-u-2-3 h-feed">
+				    <div style="display: none">
+				        <a href="{{ page.url() }}" class="p-name u-url">{{ header.feed.name|default(page.title)|e }}</a>
+				        <p class="p-summary">{{ header.feed.description|default(header.title)|e }}</p>
+				    </div>
+					{% for child in collection %}
+				        {% include 'partials/event_item.html.twig' with {'event':page, 'page':child, 'truncate':true} %}
+				    {% endfor %}
+
+	                {% if config.plugins.pagination.enabled and collection.params.pagination %}
+	                    {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+	                {% endif %}
+				</div>
+			</div>
+		</div>
+
+		<div class="events-sidebar">
+			{% include 'partials/sidebar_events.html.twig' with {'page':page} %}
+		</div>
 
 	</div>
-
 {% endblock %}
+
+{% endembed %}

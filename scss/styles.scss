@@ -149,6 +149,59 @@ main {
 	}
 }
 
+/* html5 .calendar element */
+.calendar {
+	width: 100%;
+
+	thead {
+		tr.controls {
+			font-size: 1rem;
+			font-weight: normal;
+			height: 3rem;
+
+			a {
+				color: $text;
+			}
+		}
+		tr.headings {
+			background: $primary;
+			color: #fff;
+			font-weight: normal !important;
+			font-family: Lato, sans-serif;
+		}
+	}
+
+	tbody {
+		tr {
+			height: 13vh;
+			border-bottom: 1px solid #efefef;
+			border-right: 1px solid #efefef;
+
+			td {
+				border-left: 1px solid #efefef;
+				padding: 0 1% 1%;
+
+				.calendar-day {
+					display: inline-block;
+					background: #efefef;
+					width: 30px;
+					text-align: center;
+					font-size: 85%;
+					margin-left: -9%;
+				}
+			}
+		}
+	}
+}
+
+/* html5 .events-listing */
+.events-listing {
+	@include span-columns(2 of 3);
+}
+.events-sidebar {
+	@include span-columns(1 of 3);
+}
+
 /* html5 .crafted-by-kh branding elements for the developer */
 .crafted-by-kh {
 	padding: 1rem;

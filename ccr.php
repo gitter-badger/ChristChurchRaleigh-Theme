@@ -185,4 +185,23 @@ class Ccr extends Theme
 		return $teams;
 	}
 
+	static public function getStaffMembers()
+	{
+		$grav = \Grav\Common\Grav::instance();
+
+		$pages = $grav['grav']['pages'];
+		$collection = $pages->all();
+		$items = $collection->ofType('team-member');
+
+		$members = [];
+		$members[] = 'Select an author';
+
+		foreach ($collection as $page) {
+			//dump($page);
+			$members[] = $page->header()->title;
+		}
+
+		return $members;
+	}
+
 }
